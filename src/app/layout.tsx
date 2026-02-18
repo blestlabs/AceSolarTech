@@ -3,6 +3,10 @@ import { Noto_Sans, Noto_Sans_Devanagari } from 'next/font/google';
 import { cookies } from 'next/headers';
 import './globals.css';
 import { LocaleProvider } from '@/components/providers/LocaleProvider';
+import MobileHeader from '@/components/layout/MobileHeader';
+import DesktopHeader from '@/components/layout/DesktopHeader';
+import BottomBar from '@/components/layout/BottomBar';
+import Footer from '@/components/layout/Footer';
 
 const notoSans = Noto_Sans({
   variable: '--font-body',
@@ -37,7 +41,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale}>
       <body className={`${notoSans.variable} ${notoSansDevanagari.variable} font-body antialiased bg-background text-text`}>
         <LocaleProvider initialLocale={locale}>
-          {children}
+          <MobileHeader />
+          <DesktopHeader />
+          <main className="pb-16 md:pb-0">{children}</main>
+          <BottomBar />
+          <Footer />
         </LocaleProvider>
       </body>
     </html>

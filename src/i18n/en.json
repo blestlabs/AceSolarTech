@@ -9,6 +9,6 @@
   "cta": { "whatsappUs": "Talk to Us on WhatsApp", "callUs": "Call Us", "anyQuestion": "Have a question?" },
   "deals": { "title": "Current Deals & Offers", "all": "All", "residential": "Residential", "farm": "Farm", "commercial": "Commercial", "limitedTime": "LIMITED TIME", "bestSeller": "BEST SELLER", "new": "NEW", "farmerSpecial": "FARMER SPECIAL", "bundleDeal": "BUNDLE DEAL", "endsIn": "Ends in", "days": "d", "hours": "h", "minutes": "m", "off": "off", "save": "Save", "whatsappNow": "WhatsApp Now", "noneFound": "No deals in this category right now. Check back soon!" },
   "about": { "title": "About AceSolarTech", "mission": "Making solar energy accessible and affordable for every home, farm, and business in Maharashtra.", "services": "Our Services", "howItWorks": "How It Works", "step1": "WhatsApp Us", "step1Desc": "Send us a message with your requirements", "step2": "Free Site Visit", "step2Desc": "Our team visits your location for assessment", "step3": "Installation", "step3Desc": "Professional installation in 5-7 days" },
-  "footer": { "tagline": "Solar solutions for Maharashtra", "copyright": "© {year} AceSolarTech. All rights reserved." },
+  "footer": { "tagline": "Solar solutions for Maharashtra", "serviceArea": "Serving Dhule & all of Maharashtra", "copyright": "© {year} AceSolarTech. All rights reserved." },
   "lang": { "en": "EN", "mr": "मराठी" }
 }

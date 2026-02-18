@@ -9,6 +9,6 @@
   "cta": { "whatsappUs": "WhatsApp वर आमच्याशी बोला", "callUs": "आम्हाला कॉल करा", "anyQuestion": "काही प्रश्न आहे?" },
   "deals": { "title": "सध्याच्या ऑफर्स", "all": "सर्व", "residential": "घरगुती", "farm": "शेती", "commercial": "व्यावसायिक", "limitedTime": "मर्यादित वेळ", "bestSeller": "सर्वाधिक विक्री", "new": "नवीन", "farmerSpecial": "शेतकरी स्पेशल", "bundleDeal": "बंडल ऑफर", "endsIn": "शेवटची तारीख", "days": "दि", "hours": "ता", "minutes": "मि", "off": "सूट", "save": "बचत", "whatsappNow": "आत्ता WhatsApp करा", "noneFound": "या विभागात सध्या कोणत्याही ऑफर नाहीत. लवकरच तपासा!" },
   "about": { "title": "AceSolarTech बद्दल", "mission": "महाराष्ट्रातील प्रत्येक घर, शेत आणि व्यवसायासाठी सौर ऊर्जा सुलभ आणि परवडणारी बनवणे.", "services": "आमच्या सेवा", "howItWorks": "कसे काम करते", "step1": "आम्हाला WhatsApp करा", "step1Desc": "तुमच्या गरजा आम्हाला संदेश पाठवा", "step2": "मोफत साइट भेट", "step2Desc": "आमचा टीम तुमच्या ठिकाणी भेट देतो", "step3": "इंस्टॉलेशन", "step3Desc": "5-7 दिवसांत व्यावसायिक इंस्टॉलेशन" },
-  "footer": { "tagline": "महाराष्ट्रासाठी सोलर सोल्यूशन्स", "copyright": "© {year} AceSolarTech. सर्व हक्क राखीव." },
+  "footer": { "tagline": "महाराष्ट्रासाठी सोलर सोल्यूशन्स", "serviceArea": "धुळे आणि संपूर्ण महाराष्ट्रात सेवा", "copyright": "© {year} AceSolarTech. सर्व हक्क राखीव." },
   "lang": { "en": "EN", "mr": "मराठी" }
 }
