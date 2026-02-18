@@ -1,0 +1,68 @@
+{
+  "deals": [
+    {
+      "id": "summer-3kw",
+      "title": { "en": "3kW Rooftop Solar System", "mr": "3kW रूफटॉप सोलर सिस्टम" },
+      "description": { "en": "Complete rooftop solar solution for your home", "mr": "तुमच्या घरासाठी संपूर्ण रूफटॉप सोलर सोल्यूशन" },
+      "originalPrice": 135000,
+      "dealPrice": 89999,
+      "category": "residential",
+      "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
+      "features": {
+        "en": ["Free installation", "5-year warranty", "Net metering included", "MNRE approved panels"],
+        "mr": ["मोफत इंस्टॉलेशन", "5-वर्ष वॉरंटी", "नेट मीटरिंग समाविष्ट", "MNRE मान्य पॅनेल"]
+      },
+      "expiresAt": "2026-04-30T23:59:59",
+      "active": true,
+      "featured": true
+    },
+    {
+      "id": "farmer-pump-5hp",
+      "title": { "en": "5HP Solar Water Pump", "mr": "5HP सोलर वॉटर पंप" },
+      "description": { "en": "Complete solar pump for agriculture", "mr": "शेतीसाठी संपूर्ण सोलर पंप" },
+      "originalPrice": 350000,
+      "dealPrice": 245000,
+      "category": "farm",
+      "badge": { "en": "FARMER SPECIAL", "mr": "शेतकरी स्पेशल" },
+      "features": {
+        "en": ["KUSUM Yojana eligible", "Free borewell survey", "3-year motor warranty", "Government subsidy assistance"],
+        "mr": ["कुसुम योजना पात्र", "मोफत बोअरवेल सर्वे", "3-वर्ष मोटर वॉरंटी", "सरकारी अनुदान सहाय्य"]
+      },
+      "expiresAt": null,
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "street-light-bundle",
+      "title": { "en": "Solar Street Light Pack (5 units)", "mr": "सोलर स्ट्रीट लाइट पॅक (5 युनिट)" },
+      "description": { "en": "Light up your street or compound", "mr": "तुमचा रस्ता किंवा परिसर उजळा" },
+      "originalPrice": 50000,
+      "dealPrice": 37500,
+      "category": "commercial",
+      "badge": { "en": "BUNDLE DEAL", "mr": "बंडल ऑफर" },
+      "features": {
+        "en": ["5 all-in-one units", "Dusk-to-dawn automatic", "2-year warranty", "Free delivery"],
+        "mr": ["5 ऑल-इन-वन युनिट", "संध्याकाळ ते पहाट ऑटोमॅटिक", "2-वर्ष वॉरंटी", "मोफत डिलिव्हरी"]
+      },
+      "expiresAt": "2026-03-31T23:59:59",
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "commercial-10kw",
+      "title": { "en": "10kW Commercial Solar System", "mr": "10kW व्यावसायिक सोलर सिस्टम" },
+      "description": { "en": "Power your shop, office or factory", "mr": "तुमचे दुकान, कार्यालय किंवा कारखाना चालवा" },
+      "originalPrice": 550000,
+      "dealPrice": 449000,
+      "category": "commercial",
+      "badge": { "en": "NEW", "mr": "नवीन" },
+      "features": {
+        "en": ["Professional site survey", "Custom design", "Net metering setup", "10-year panel warranty"],
+        "mr": ["व्यावसायिक साइट सर्वे", "कस्टम डिझाइन", "नेट मीटरिंग सेटअप", "10-वर्ष पॅनेल वॉरंटी"]
+      },
+      "expiresAt": null,
+      "active": true,
+      "featured": false
+    }
+  ]
+}
