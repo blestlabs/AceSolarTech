@@ -48,7 +48,7 @@ export default function SavingsCalculator() {
           step={500}
           value={bill}
           onChange={(e) => setBill(Number(e.target.value))}
-          className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-border accent-primary [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary"
+          className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-border accent-primary [&::-webkit-slider-thumb]:h-7 [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-moz-range-thumb]:h-7 [&::-moz-range-thumb]:w-7 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-primary"
         />
         <div className="mt-1 flex justify-between text-xs text-text-muted">
           <span>₹500</span>
@@ -87,7 +87,7 @@ export default function SavingsCalculator() {
         <select
           value={districtKey}
           onChange={(e) => setDistrictKey(e.target.value)}
-          className="mt-2 w-full rounded-lg border border-border bg-white p-3 text-text"
+          className="mt-2 w-full min-h-[44px] rounded-lg border border-border bg-white p-3 text-text"
         >
           {Object.entries(DISTRICTS).map(([key, d]) => (
             <option key={key} value={key}>

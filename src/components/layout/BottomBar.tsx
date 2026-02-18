@@ -25,7 +25,7 @@ export default function BottomBar() {
           <Link
             key={href}
             href={href}
-            className={`flex flex-1 flex-col items-center justify-center gap-0.5 ${
+            className={`flex flex-1 flex-col items-center justify-center gap-0.5 min-h-[44px] ${
               isActive ? 'text-primary' : 'text-text-secondary'
             }`}
           >
@@ -40,7 +40,7 @@ export default function BottomBar() {
         href={generalInquiry(locale)}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-1 flex-col items-center justify-center gap-0.5 text-text-secondary"
+        className="flex flex-1 flex-col items-center justify-center gap-0.5 min-h-[44px] text-text-secondary"
       >
         <MessageCircle size={20} />
         <span className="text-xs">{t('nav.chat')}</span>

@@ -18,7 +18,7 @@ export default function DealFilter({ activeFilter, onFilterChange }: DealFilterP
         <button
           key={cat}
           onClick={() => onFilterChange(cat)}
-          className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+          className={`whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium transition-colors min-h-[44px] ${
             activeFilter === cat
               ? 'bg-primary text-white'
               : 'border border-border bg-white text-text-secondary'
