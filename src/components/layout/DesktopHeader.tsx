@@ -25,18 +25,19 @@ export default function DesktopHeader() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/images/logo-icon.png" alt="AceSolarTech" width={36} height={36} />
+          <Image src="/images/logo-icon.png" alt="AceSolarTech" width={36} height={36} priority />
           <span className="font-display text-xl font-bold text-primary">AceSolarTech</span>
         </Link>
 
         {/* Center nav */}
-        <nav className="flex items-center gap-6">
+        <nav aria-label="Main navigation" className="flex items-center gap-6">
           {navLinks.map(({ href, key }) => {
             const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
             return (
               <Link
                 key={href}
                 href={href}
+                aria-current={isActive ? 'page' : undefined}
                 className={`text-sm transition-colors hover:text-primary ${
                   isActive ? 'font-semibold text-primary' : 'text-text-secondary'
                 }`}

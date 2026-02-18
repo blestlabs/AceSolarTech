@@ -11,7 +11,7 @@ export default function LangToggle() {
     <button
       onClick={toggleLocale}
       className="flex h-8 items-center rounded-full border border-border bg-surface text-sm"
-      aria-label="Toggle language"
+      aria-label={locale === 'en' ? 'Switch to Marathi' : 'Switch to English'}
     >
       <span
         className={`px-2.5 py-1 rounded-full transition-colors ${

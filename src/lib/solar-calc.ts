@@ -14,15 +14,15 @@ export const DISTRICTS: Record<string, { name: { en: string; mr: string }; sunHo
 
 const TARIFF_PER_KWH = 8;
 const COST_PER_KW = 50000;
-const SYSTEM_LOSS = 0.80;
+const SYSTEM_EFFICIENCY = 0.80;
 
 export function calculate(monthlyBill: number, propertyType: string, districtKey: string) {
   const district = DISTRICTS[districtKey] || DISTRICTS.other;
   const monthlyKwh = monthlyBill / TARIFF_PER_KWH;
   const dailyKwh = monthlyKwh / 30;
-  const systemSizeKw = Math.ceil((dailyKwh / (district.sunHours * SYSTEM_LOSS)) * 10) / 10;
+  const systemSizeKw = Math.ceil((dailyKwh / (district.sunHours * SYSTEM_EFFICIENCY)) * 10) / 10;
 
-  const dailyGeneration = systemSizeKw * district.sunHours * SYSTEM_LOSS;
+  const dailyGeneration = systemSizeKw * district.sunHours * SYSTEM_EFFICIENCY;
   const monthlyGeneration = dailyGeneration * 30;
   const monthlySavings = Math.round(monthlyGeneration * TARIFF_PER_KWH);
   const annualSavings = monthlySavings * 12;

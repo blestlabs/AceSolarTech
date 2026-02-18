@@ -18,13 +18,14 @@ export default function BottomBar() {
   const t = useTranslations();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 flex h-14 items-center border-t border-border bg-white pb-[env(safe-area-inset-bottom)] md:hidden">
+    <nav aria-label="Main navigation" className="fixed bottom-0 left-0 right-0 z-50 flex min-h-14 items-center border-t border-border bg-white pb-[env(safe-area-inset-bottom)] md:hidden">
       {tabs.map(({ href, icon: Icon, key }) => {
         const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
         return (
           <Link
             key={href}
             href={href}
+            aria-current={isActive ? 'page' : undefined}
             className={`flex flex-1 flex-col items-center justify-center gap-0.5 min-h-[44px] ${
               isActive ? 'text-primary' : 'text-text-secondary'
             }`}

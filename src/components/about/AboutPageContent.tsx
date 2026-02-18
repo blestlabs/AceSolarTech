@@ -4,7 +4,7 @@ import {
   Sun, Sprout, Zap, Lightbulb, Lamp, Building2, Car, Droplets,
   MessageCircle, MapPin, Wrench,
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations, getLocalizedField } from '@/lib/i18n';
 import productsData from '@/data/products.json';
 import SchemesSection from '@/components/home/SchemesSection';
@@ -32,13 +32,14 @@ const steps = [
 export default function AboutPageContent() {
   const locale = useLocale();
   const t = useTranslations();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <>
       {/* Mission Section */}
       <section className="px-4 py-8 md:py-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
@@ -54,7 +55,7 @@ export default function AboutPageContent() {
       <section className="px-4 py-8 md:py-12">
         <div className="mx-auto max-w-6xl">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -64,7 +65,7 @@ export default function AboutPageContent() {
           </motion.h2>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -95,7 +96,7 @@ export default function AboutPageContent() {
       <section className="bg-surface px-4 py-8 md:py-12">
         <div className="mx-auto max-w-6xl">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -113,7 +114,7 @@ export default function AboutPageContent() {
               return (
                 <motion.div
                   key={step.num}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.15 }}

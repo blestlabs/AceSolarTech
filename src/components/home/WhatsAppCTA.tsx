@@ -1,18 +1,19 @@
 'use client';
 
 import { MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations } from '@/lib/i18n';
 import { generalInquiry } from '@/lib/whatsapp';
 
 export default function WhatsAppCTA() {
   const locale = useLocale();
   const t = useTranslations();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="bg-whatsapp px-4 py-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}

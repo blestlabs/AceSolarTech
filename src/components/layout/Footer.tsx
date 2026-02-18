@@ -22,7 +22,7 @@ export default function Footer() {
         <p className="mt-1 text-sm text-text-secondary">{t('footer.tagline')}</p>
 
         {/* Links */}
-        <nav className="mt-4 flex items-center justify-center gap-6">
+        <nav aria-label="Footer navigation" className="mt-4 flex items-center justify-center gap-6">
           {footerLinks.map(({ href, key }) => (
             <Link
               key={href}

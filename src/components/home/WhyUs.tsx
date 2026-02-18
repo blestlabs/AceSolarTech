@@ -1,7 +1,7 @@
 'use client';
 
 import { MapPin, CreditCard, ShieldCheck } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from '@/lib/i18n';
 import type { LucideIcon } from 'lucide-react';
 
@@ -19,12 +19,13 @@ const reasons: Reason[] = [
 
 export default function WhyUs() {
   const t = useTranslations();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="px-4 py-8 md:py-12">
       <div className="mx-auto max-w-6xl">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
@@ -37,7 +38,7 @@ export default function WhyUs() {
           {reasons.map(({ icon: Icon, titleKey, descKey }, idx) => (
             <motion.div
               key={titleKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}

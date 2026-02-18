@@ -14,10 +14,13 @@ export function LocaleProvider({ children, initialLocale }: { children: React.Re
   const [locale, setLocale] = useState<Locale>(initialLocale);
 
   const toggleLocale = useCallback(() => {
-    const newLocale = locale === 'en' ? 'mr' : 'en';
-    document.cookie = `locale=${newLocale};path=/;max-age=31536000`;
-    setLocale(newLocale);
-  }, [locale]);
+    setLocale((prev) => {
+      const newLocale = prev === 'en' ? 'mr' : 'en';
+      document.cookie = `locale=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
+      document.documentElement.lang = newLocale;
+      return newLocale;
+    });
+  }, []);
 
   return (
     <LocaleContext.Provider value={locale}>

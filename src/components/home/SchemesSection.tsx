@@ -80,7 +80,7 @@ export default function SchemesSection() {
 
             <div className="mt-4 flex items-center gap-1.5">
               <FileCheck size={16} className="text-primary" />
-              <span className="text-sm font-medium text-text">{t('schemes.subtitle')}</span>
+              <span className="text-sm font-medium text-text">{t('schemes.freeProcessKusum')}</span>
             </div>
           </motion.div>
         </div>

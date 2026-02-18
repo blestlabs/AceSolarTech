@@ -34,14 +34,15 @@ export default function SavingsCalculator() {
     <div className="space-y-6">
       {/* ── Monthly Bill Slider ── */}
       <div>
-        <label className="text-sm text-text-secondary">{t('calculator.monthlyBill')}</label>
+        <label htmlFor="bill-slider" className="text-sm text-text-secondary">{t('calculator.monthlyBill')}</label>
         <p className="mt-1 text-2xl font-bold text-primary">
           ₹{bill.toLocaleString('en-IN')}
           <span className="text-base font-normal text-text-secondary">
-            /{locale === 'mr' ? 'महिना' : 'month'}
+            {t('calculator.perMonth')}
           </span>
         </p>
         <input
+          id="bill-slider"
           type="range"
           min={500}
           max={50000}
@@ -57,8 +58,8 @@ export default function SavingsCalculator() {
       </div>
 
       {/* ── Property Type Cards ── */}
-      <div>
-        <label className="text-sm text-text-secondary">{t('calculator.propertyType')}</label>
+      <fieldset>
+        <legend className="text-sm text-text-secondary">{t('calculator.propertyType')}</legend>
         <div className="mt-2 grid grid-cols-3 gap-3">
           {PROPERTY_TYPES.map(({ key, icon: Icon }) => {
             const selected = propertyType === key;
@@ -79,12 +80,13 @@ export default function SavingsCalculator() {
             );
           })}
         </div>
-      </div>
+      </fieldset>
 
       {/* ── District Dropdown ── */}
       <div>
-        <label className="text-sm text-text-secondary">{t('calculator.district')}</label>
+        <label htmlFor="district-select" className="text-sm text-text-secondary">{t('calculator.district')}</label>
         <select
+          id="district-select"
           value={districtKey}
           onChange={(e) => setDistrictKey(e.target.value)}
           className="mt-2 w-full min-h-[44px] rounded-lg border border-border bg-white p-3 text-text"

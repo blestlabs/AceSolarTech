@@ -1,22 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from '@/lib/i18n';
+import { useLocale, useTranslations } from '@/lib/i18n';
 
 const districts = [
-  { name: 'Dhule', hq: true },
-  { name: 'Nashik', hq: false },
-  { name: 'Jalgaon', hq: false },
-  { name: 'Nandurbar', hq: false },
-  { name: 'Ahmednagar', hq: false },
-  { name: 'Pune', hq: false },
-  { name: 'Mumbai', hq: false },
-  { name: 'Chh. Sambhajinagar', hq: false },
-  { name: 'Kolhapur', hq: false },
-  { name: 'Nagpur', hq: false },
+  { en: 'Dhule', mr: 'धुळे', hq: true },
+  { en: 'Nashik', mr: 'नाशिक', hq: false },
+  { en: 'Jalgaon', mr: 'जळगाव', hq: false },
+  { en: 'Nandurbar', mr: 'नंदुरबार', hq: false },
+  { en: 'Ahmednagar', mr: 'अहमदनगर', hq: false },
+  { en: 'Pune', mr: 'पुणे', hq: false },
+  { en: 'Mumbai', mr: 'मुंबई', hq: false },
+  { en: 'Chh. Sambhajinagar', mr: 'छ. संभाजीनगर', hq: false },
+  { en: 'Kolhapur', mr: 'कोल्हापूर', hq: false },
+  { en: 'Nagpur', mr: 'नागपूर', hq: false },
 ];
 
 export default function ServiceArea() {
+  const locale = useLocale();
   const t = useTranslations();
 
   return (
@@ -43,14 +44,14 @@ export default function ServiceArea() {
         >
           {districts.map((district) => (
             <span
-              key={district.name}
+              key={district.en}
               className={`rounded-full px-3 py-1.5 text-sm font-medium ${
                 district.hq
                   ? 'bg-primary text-white'
                   : 'bg-primary-light text-text'
               }`}
             >
-              {district.name}
+              {district[locale] || district.en}
             </span>
           ))}
         </motion.div>

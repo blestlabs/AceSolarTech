@@ -33,7 +33,7 @@ export default function CountdownTimer({ expiresAt }: CountdownTimerProps) {
   if (!remaining) return null;
 
   return (
-    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-danger">
+    <span aria-live="polite" aria-atomic="true" className="inline-flex items-center gap-1.5 text-sm font-medium text-danger">
       <Clock size={14} className="shrink-0" />
       {t('deals.endsIn')}{' '}
       {remaining.days}{t('deals.days')}{' '}

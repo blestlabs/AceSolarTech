@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from '@/lib/i18n';
+import { calculate } from '@/lib/solar-calc';
 import { generalInquiry } from '@/lib/whatsapp';
 
 export default function QuickCalculator() {
@@ -12,8 +13,9 @@ export default function QuickCalculator() {
   const t = useTranslations();
   const [bill, setBill] = useState(3000);
 
-  const savings = Math.round(bill * 0.8);
-  const annual = savings * 12;
+  const result = calculate(bill, 'residential', 'dhule');
+  const savings = result.monthlySavings;
+  const annual = result.annualSavings;
 
   return (
     <section className="px-4 py-8 md:py-12">
@@ -33,7 +35,7 @@ export default function QuickCalculator() {
 
         {/* Current value */}
         <p className="mt-1 text-2xl font-bold text-primary">
-          ₹{bill.toLocaleString('en-IN')}<span className="text-base font-normal text-text-secondary">/{locale === 'mr' ? 'महिना' : 'month'}</span>
+          ₹{bill.toLocaleString('en-IN')}<span className="text-base font-normal text-text-secondary">{t('calculator.perMonth')}</span>
         </p>
 
         {/* Range slider */}
@@ -54,14 +56,14 @@ export default function QuickCalculator() {
         {/* Savings output */}
         <div className="mt-5 rounded-xl bg-white p-4">
           <p className="text-base text-text">
-            {locale === 'mr' ? 'तुम्ही अंदाजे बचत कराल' : 'You save approximately'}{' '}
+            {t('calculator.youSave')}{' '}
             <span className="text-xl font-bold text-success">
-              ₹{savings.toLocaleString('en-IN')}/{locale === 'mr' ? 'महिना' : 'month'}
+              ₹{savings.toLocaleString('en-IN')}{t('calculator.perMonth')}
             </span>
           </p>
           <p className="mt-1 text-sm text-text-secondary">
-            {locale === 'mr' ? 'म्हणजे' : "That's"}{' '}
-            <span className="font-semibold text-success">₹{annual.toLocaleString('en-IN')}/{locale === 'mr' ? 'वर्ष' : 'year'}</span>!
+            {t('calculator.thats')}{' '}
+            <span className="font-semibold text-success">₹{annual.toLocaleString('en-IN')}{t('calculator.perYear')}</span>!
           </p>
         </div>
 

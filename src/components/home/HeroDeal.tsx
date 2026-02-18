@@ -1,7 +1,7 @@
 'use client';
 
 import { CheckCircle, MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations, getLocalizedField } from '@/lib/i18n';
 import { dealInquiry, generalInquiry } from '@/lib/whatsapp';
 import deals from '@/data/deals.json';
@@ -9,6 +9,7 @@ import deals from '@/data/deals.json';
 export default function HeroDeal() {
   const locale = useLocale();
   const t = useTranslations();
+  const shouldReduceMotion = useReducedMotion();
 
   const featuredDeal = deals.deals.find((d) => d.active && d.featured);
 
@@ -17,7 +18,7 @@ export default function HeroDeal() {
       <section className="bg-gradient-to-b from-primary-light to-white px-4 py-10 md:py-16">
         <div className="mx-auto max-w-6xl text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="font-display text-2xl font-bold md:text-4xl"
@@ -25,7 +26,7 @@ export default function HeroDeal() {
             {t('hero.tagline')}
           </motion.h1>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6"
@@ -55,7 +56,7 @@ export default function HeroDeal() {
   return (
     <section className="bg-gradient-to-b from-primary-light to-white px-4 py-8 md:py-14">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl md:flex md:items-center md:gap-12"
