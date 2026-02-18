@@ -1,17 +1,12 @@
-'use client';
+import type { Metadata } from 'next';
+import CalculatorPageContent from '@/components/calculator/CalculatorPageContent';
 
-import { useTranslations } from '@/lib/i18n';
-import SavingsCalculator from '@/components/calculator/SavingsCalculator';
+export const metadata: Metadata = {
+  title: 'Solar Savings Calculator | AceSolarTech',
+  description:
+    'Calculate how much you can save with solar energy. Maharashtra-specific calculator with government subsidy estimates.',
+};
 
 export default function CalculatorPage() {
-  const t = useTranslations();
-
-  return (
-    <section className="mx-auto max-w-lg px-4 py-6">
-      <h1 className="font-display text-2xl font-bold">{t('calculator.title')}</h1>
-      <div className="mt-6">
-        <SavingsCalculator />
-      </div>
-    </section>
-  );
+  return <CalculatorPageContent />;
 }

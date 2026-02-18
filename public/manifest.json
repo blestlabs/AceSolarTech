@@ -1,0 +1,12 @@
+{
+  "name": "AceSolarTech",
+  "short_name": "AceSolar",
+  "description": "Solar solutions for Maharashtra",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF6B00",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}

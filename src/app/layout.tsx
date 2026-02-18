@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: 'AceSolarTech | Solar Solutions in Dhule, Maharashtra',
   description: 'Affordable solar panels, solar pumps, solar lights for homes, farms, and businesses in Dhule and all of Maharashtra. Free site visit. EMI available.',
   keywords: ['solar panels Dhule', 'solar installation Maharashtra', 'solar pump farmer', 'rooftop solar', 'AceSolarTech', 'सोलर पॅनेल धुळे'],
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
