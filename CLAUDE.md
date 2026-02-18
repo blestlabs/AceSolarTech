@@ -84,16 +84,35 @@ src/
     └── solar-calc.ts           # Maharashtra solar calculation engine
 ```
 
+## Image Assets
+
+All images generated via DALL-E 3 (OpenAI API), stored in `public/`:
+
+| Asset | File | Size |
+|-------|------|------|
+| Logo icon | `images/logo-icon.png` | 1024x1024 |
+| OG social banner | `images/og-image.png` | 1792x1024 |
+| Favicon | `favicon.ico` | 32x32 |
+| Apple touch icon | `apple-touch-icon.png` | 180x180 |
+| PWA icon (small) | `icon-192.png` | 192x192 |
+| PWA icon (large) | `icon-512.png` | 512x512 |
+
+**Product illustrations** (8 images in `public/images/`):
+`product-rooftop.png`, `product-farm.png`, `product-motor.png`, `product-street-light.png`, `product-home-light.png`, `product-commercial.png`, `product-parking.png`, `product-water-heater.png`
+
+To regenerate images: use DALL-E 3 via OpenAI API (key in `~/.secrets/credentials.json` → `api_keys.openai`).
+
 ## Key Files to Edit
 
 | Task | File |
 |------|------|
 | Add/remove deals | `src/data/deals.json` |
-| Add/remove products | `src/data/products.json` |
+| Add/remove products | `src/data/products.json` (includes `image` field for illustration path) |
 | Change WhatsApp number | `src/lib/whatsapp.ts` (line 1: `WHATSAPP_NUMBER`) |
 | Update translations | `src/i18n/en.json` + `src/i18n/mr.json` |
 | Modify solar calculations | `src/lib/solar-calc.ts` |
 | Add Maharashtra districts | `src/lib/solar-calc.ts` (DISTRICTS object) |
+| Replace product images | `public/images/product-*.png` (update `src/data/products.json` `image` field) |
 
 ## Color Palette (Light Theme)
 
@@ -146,5 +165,6 @@ pm2 logs acesolartech-frontend     # View logs
 
 | Date | Change |
 |------|--------|
+| 2026-02-18 | **IMAGES & ASSETS** - DALL-E 3 generated logo, OG social banner, 8 product illustrations, favicon, apple-touch-icon, PWA icons (192/512px). Integrated into headers (logo), product grid (illustrations replace lucide icons), manifest, OpenGraph metadata. Added metadataBase for acesolartech.com. |
 | 2026-02-18 | **COMPLETE REDESIGN** - Mobile-first, WhatsApp-driven, bilingual EN/Marathi. Light theme for outdoor readability. Bottom tab nav, deals board with countdown timers, solar calculator with Maharashtra data + PM Surya Ghar subsidy, government schemes section, 8 product categories, service area (Dhule HQ + 10 Maharashtra districts). 35 source files from scratch. |
 | 2026-02-18 | **Initial site** - Dark theme premium design (replaced by redesign above) |
