@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { MessageCircle } from 'lucide-react';
 import { useLocale, useTranslations } from '@/lib/i18n';
@@ -23,8 +24,9 @@ export default function DesktopHeader() {
     <header className="sticky top-0 z-40 hidden border-b border-border bg-white/95 backdrop-blur md:flex">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="font-display text-xl font-bold text-primary">
-          AceSolarTech
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/images/logo-icon.png" alt="AceSolarTech" width={36} height={36} />
+          <span className="font-display text-xl font-bold text-primary">AceSolarTech</span>
         </Link>
 
         {/* Center nav */}

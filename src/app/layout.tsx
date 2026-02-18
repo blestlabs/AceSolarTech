@@ -21,10 +21,22 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://acesolartech.com'),
   title: 'AceSolarTech | Solar Solutions in Dhule, Maharashtra',
   description: 'Affordable solar panels, solar pumps, solar lights for homes, farms, and businesses in Dhule and all of Maharashtra. Free site visit. EMI available.',
   keywords: ['solar panels Dhule', 'solar installation Maharashtra', 'solar pump farmer', 'rooftop solar', 'AceSolarTech', 'सोलर पॅनेल धुळे'],
   manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'AceSolarTech | Solar Solutions in Dhule, Maharashtra',
+    description: 'Affordable solar panels, solar pumps, solar lights for homes, farms, and businesses in Dhule and all of Maharashtra.',
+    images: [{ url: '/images/og-image.png', width: 1792, height: 1024 }],
+    type: 'website',
+    locale: 'en_IN',
+  },
 };
 
 export const viewport: Viewport = {
