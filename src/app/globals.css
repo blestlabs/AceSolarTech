@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF6B00;
+  --color-primary-dark: #E55A00;
+  --color-primary-light: #FFF3E0;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1DA851;
+  --color-background: #FFFFFF;
+  --color-surface: #F5F5F5;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  --color-border: #E0E0E0;
+  --color-success: #2E7D32;
+  --color-danger: #D32F2F;
+  --font-body: 'Noto Sans', sans-serif;
+  --font-display: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-tap-highlight-color: transparent; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+::selection { background: rgba(255, 107, 0, 0.2); }
+
+/* Hide horizontal scrollbar for product grids */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
