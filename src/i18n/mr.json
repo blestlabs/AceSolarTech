@@ -1,0 +1,14 @@
+{
+  "nav": { "home": "होम", "deals": "ऑफर्स", "calculator": "कॅल्क", "chat": "चॅट", "about": "आमच्याबद्दल" },
+  "hero": { "tagline": "प्रत्येक घर, शेत आणि व्यवसायासाठी सौर ऊर्जा", "cta": "ही ऑफर मिळवा", "viewAll": "सर्व ऑफर्स पहा" },
+  "products": { "title": "आमचे सोलर सोल्यूशन्स", "startingFrom": "₹{price} पासून", "enquire": "WhatsApp वर चौकशी करा" },
+  "calculator": { "title": "तुम्ही किती बचत करू शकता?", "monthlyBill": "तुमचे मासिक वीज बिल", "propertyType": "मालमत्ता प्रकार", "district": "तुमचा जिल्हा", "residential": "घर", "farm": "शेत", "commercial": "व्यवसाय", "systemSize": "शिफारस केलेली सिस्टम", "monthlySavings": "मासिक बचत", "annualSavings": "वार्षिक बचत", "subsidy": "सरकारी अनुदान", "netCost": "तुमचा खर्च (अनुदानानंतर)", "payback": "परतफेड कालावधी", "years": "वर्षे", "getQuote": "WhatsApp वर अचूक कोट मिळवा", "fullCalc": "तपशीलवार गणना हवी आहे?" },
+  "schemes": { "title": "सरकारी अनुदान", "subtitle": "आम्ही सर्व कागदपत्रे हाताळतो", "pmSurya": "पीएम सूर्य घर मोफत वीज योजना", "subsidyAmount": "3kW सिस्टमवर ₹78,000 पर्यंत अनुदान", "freeProcess": "मोफत अर्ज सहाय्य", "kusum": "शेतकऱ्यांसाठी कुसुम योजना", "kusumDesc": "शेतीसाठी सोलर पंप अनुदान" },
+  "why": { "title": "AceSolarTech का?", "freeVisit": "मोफत साइट भेट", "freeVisitDesc": "आम्ही तुमच्याकडे येतो, कोणतीही बांधिलकी नाही", "emi": "EMI उपलब्ध", "emiDesc": "सोप्या मासिक हप्त्यांवर, पहिल्या दिवसापासून बचत", "warranty": "25-वर्ष वॉरंटी", "warrantyDesc": "दीर्घकालीन कामगिरीची हमी" },
+  "serviceArea": { "title": "आम्ही संपूर्ण महाराष्ट्रात सेवा देतो", "subtitle": "धुळे मुख्यालय, संपूर्ण राज्यभर सेवा" },
+  "cta": { "whatsappUs": "WhatsApp वर आमच्याशी बोला", "callUs": "आम्हाला कॉल करा", "anyQuestion": "काही प्रश्न आहे?" },
+  "deals": { "title": "सध्याच्या ऑफर्स", "all": "सर्व", "residential": "घरगुती", "farm": "शेती", "commercial": "व्यावसायिक", "limitedTime": "मर्यादित वेळ", "bestSeller": "सर्वाधिक विक्री", "new": "नवीन", "farmerSpecial": "शेतकरी स्पेशल", "bundleDeal": "बंडल ऑफर", "endsIn": "शेवटची तारीख", "days": "दि", "hours": "ता", "minutes": "मि", "off": "सूट", "save": "बचत", "whatsappNow": "आत्ता WhatsApp करा", "noneFound": "या विभागात सध्या कोणत्याही ऑफर नाहीत. लवकरच तपासा!" },
+  "about": { "title": "AceSolarTech बद्दल", "mission": "महाराष्ट्रातील प्रत्येक घर, शेत आणि व्यवसायासाठी सौर ऊर्जा सुलभ आणि परवडणारी बनवणे.", "services": "आमच्या सेवा", "howItWorks": "कसे काम करते", "step1": "आम्हाला WhatsApp करा", "step1Desc": "तुमच्या गरजा आम्हाला संदेश पाठवा", "step2": "मोफत साइट भेट", "step2Desc": "आमचा टीम तुमच्या ठिकाणी भेट देतो", "step3": "इंस्टॉलेशन", "step3Desc": "5-7 दिवसांत व्यावसायिक इंस्टॉलेशन" },
+  "footer": { "tagline": "महाराष्ट्रासाठी सोलर सोल्यूशन्स", "copyright": "© {year} AceSolarTech. सर्व हक्क राखीव." },
+  "lang": { "en": "EN", "mr": "मराठी" }
+}
