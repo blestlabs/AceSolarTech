@@ -121,7 +121,7 @@ export default function HeroDeal() {
         <div className="mt-8 hidden flex-1 items-center justify-center md:flex">
           <div className="relative h-72 w-full overflow-hidden rounded-2xl">
             <Image
-              src="/images/hero-solar-home.png"
+              src="/images/deal-residential.png"
               alt="Modern home with rooftop solar panels in Maharashtra"
               fill
               className="object-cover"
