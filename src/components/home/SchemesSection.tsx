@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { FileCheck, IndianRupee, Tractor } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from '@/lib/i18n';
@@ -29,8 +30,12 @@ export default function SchemesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-xl border border-border bg-white p-5 shadow-sm"
+            className="overflow-hidden rounded-xl border border-border bg-white shadow-sm"
           >
+            <div className="relative aspect-[3/1]">
+              <Image src="/images/scheme-pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="p-5">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-light">
                 <IndianRupee size={20} className="text-primary" />
@@ -57,6 +62,7 @@ export default function SchemesSection() {
               <FileCheck size={16} className="text-primary" />
               {t('schemes.freeProcess')}
             </p>
+            </div>
           </motion.div>
 
           {/* KUSUM Yojana card */}
@@ -65,8 +71,12 @@ export default function SchemesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-xl border border-border bg-white p-5 shadow-sm"
+            className="overflow-hidden rounded-xl border border-border bg-white shadow-sm"
           >
+            <div className="relative aspect-[3/1]">
+              <Image src="/images/scheme-kusum-yojana.png" alt="KUSUM Yojana for farmers" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="p-5">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-light">
                 <Tractor size={20} className="text-primary" />
@@ -81,6 +91,7 @@ export default function SchemesSection() {
             <div className="mt-4 flex items-center gap-1.5">
               <FileCheck size={16} className="text-primary" />
               <span className="text-sm font-medium text-text">{t('schemes.freeProcessKusum')}</span>
+            </div>
             </div>
           </motion.div>
         </div>

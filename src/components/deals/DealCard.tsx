@@ -1,10 +1,17 @@
 'use client';
 
+import Image from 'next/image';
 import { CheckCircle, MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations, getLocalizedField } from '@/lib/i18n';
 import { dealInquiry } from '@/lib/whatsapp';
 import CountdownTimer from '@/components/ui/CountdownTimer';
+
+const categoryImages: Record<string, { src: string; alt: string }> = {
+  residential: { src: '/images/deal-residential.png', alt: 'Residential solar installation' },
+  farm: { src: '/images/deal-farm.png', alt: 'Agricultural solar pump' },
+  commercial: { src: '/images/deal-commercial.png', alt: 'Commercial solar array' },
+};
 
 interface Deal {
   id: string;
@@ -48,8 +55,16 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.35, delay: index * 0.08 }}
-      className="rounded-xl border border-border bg-white p-5 shadow-sm"
+      className="overflow-hidden rounded-xl border border-border bg-white shadow-sm"
     >
+      {/* Category image */}
+      {categoryImages[deal.category] && (
+        <div className="relative aspect-[3/1]">
+          <Image src={categoryImages[deal.category].src} alt={categoryImages[deal.category].alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+        </div>
+      )}
+
+      <div className="p-5">
       {/* Badge */}
       <span
         className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold ${
@@ -122,6 +137,7 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
           <Phone size={16} />
           {t('cta.callUs')}
         </a>
+      </div>
       </div>
     </motion.div>
   );

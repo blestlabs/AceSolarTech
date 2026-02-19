@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations, getLocalizedField } from '@/lib/i18n';
@@ -116,14 +117,23 @@ export default function HeroDeal() {
           </div>
         </div>
 
-        {/* Right side: decorative on desktop */}
+        {/* Right side: hero image on desktop */}
         <div className="mt-8 hidden flex-1 items-center justify-center md:flex">
-          <div className="flex h-64 w-64 items-center justify-center rounded-full bg-primary-light">
-            <span className="text-center font-display text-5xl font-bold text-primary">
-              {discount}%
-              <br />
-              <span className="text-lg">{t('deals.off')}</span>
-            </span>
+          <div className="relative h-72 w-full overflow-hidden rounded-2xl">
+            <Image
+              src="/images/hero-solar-home.png"
+              alt="Modern home with rooftop solar panels in Maharashtra"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 0vw, 50vw"
+            />
+            <div className="absolute bottom-4 right-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/90 shadow-lg">
+              <span className="text-center font-display text-2xl font-bold text-white">
+                {discount}%
+                <br />
+                <span className="text-xs">{t('deals.off')}</span>
+              </span>
+            </div>
           </div>
         </div>
       </motion.div>

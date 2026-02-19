@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from '@/lib/i18n';
 
@@ -40,6 +41,18 @@ export default function ServiceArea() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-5 overflow-hidden rounded-2xl"
+        >
+          <div className="relative aspect-[3/1]">
+            <Image src="/images/service-area-maharashtra.png" alt="Solar installations across Maharashtra" fill className="object-cover" sizes="100vw" />
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-5 flex flex-wrap gap-2"
         >
           {districts.map((district) => (

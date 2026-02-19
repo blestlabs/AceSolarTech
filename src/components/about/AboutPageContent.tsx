@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {
   Sun, Sprout, Zap, Lightbulb, Lamp, Building2, Car, Droplets,
   MessageCircle, MapPin, Wrench,
@@ -24,9 +25,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const steps = [
-  { num: 1, icon: MessageCircle, titleKey: 'about.step1', descKey: 'about.step1Desc' },
-  { num: 2, icon: MapPin, titleKey: 'about.step2', descKey: 'about.step2Desc' },
-  { num: 3, icon: Wrench, titleKey: 'about.step3', descKey: 'about.step3Desc' },
+  { num: 1, icon: MessageCircle, titleKey: 'about.step1', descKey: 'about.step1Desc', image: '/images/about-step-whatsapp.png', imageAlt: 'Customer sending WhatsApp message to AceSolarTech' },
+  { num: 2, icon: MapPin, titleKey: 'about.step2', descKey: 'about.step2Desc', image: '/images/about-step-site-visit.png', imageAlt: 'Solar technicians doing rooftop site assessment' },
+  { num: 3, icon: Wrench, titleKey: 'about.step3', descKey: 'about.step3Desc', image: '/images/about-step-installation.png', imageAlt: 'Professional solar panel installation in progress' },
 ];
 
 export default function AboutPageContent() {
@@ -38,17 +39,38 @@ export default function AboutPageContent() {
     <>
       {/* Mission Section */}
       <section className="px-4 py-8 md:py-12">
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl border-l-4 border-primary pl-5 py-2"
-        >
-          <p className="font-display text-xl font-medium text-text md:text-2xl">
-            {t('about.mission')}
-          </p>
-        </motion.div>
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative overflow-hidden rounded-2xl"
+          >
+            <div className="relative aspect-[3/1]">
+              <Image src="/images/about-mission.png" alt="Maharashtra transitioning to solar energy" fill className="object-cover" sizes="100vw" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+            </div>
+            <div className="absolute inset-0 flex items-center px-6 md:px-12">
+              <p className="max-w-lg font-display text-lg font-medium text-white md:text-2xl drop-shadow-lg">
+                {t('about.mission')}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Team photo */}
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-8 overflow-hidden rounded-2xl"
+          >
+            <div className="relative aspect-[2.5/1]">
+              <Image src="/images/about-team.png" alt="AceSolarTech team" fill className="object-cover" sizes="100vw" />
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Services Grid */}
@@ -120,6 +142,9 @@ export default function AboutPageContent() {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="relative z-10 flex flex-col items-center text-center md:flex-1"
                 >
+                  <div className="mx-auto mb-3 w-48 overflow-hidden rounded-xl">
+                    <Image src={step.image} alt={step.imageAlt} width={192} height={192} className="object-cover" />
+                  </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
                     {step.num}
                   </div>
