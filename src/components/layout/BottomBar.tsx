@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { House, Tag, Calculator, MessageCircle } from 'lucide-react';
+import { House, Tag, Calculator, BookOpen, MessageCircle } from 'lucide-react';
 import { useLocale, useTranslations } from '@/lib/i18n';
 import { generalInquiry } from '@/lib/whatsapp';
 
@@ -10,6 +10,7 @@ const tabs = [
   { href: '/', icon: House, key: 'nav.home' },
   { href: '/deals', icon: Tag, key: 'nav.deals' },
   { href: '/calculator', icon: Calculator, key: 'nav.calculator' },
+  { href: '/blog', icon: BookOpen, key: 'nav.blog' },
 ] as const;
 
 export default function BottomBar() {

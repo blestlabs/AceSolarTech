@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "होम", "deals": "ऑफर्स", "calculator": "कॅल्क", "chat": "चॅट", "about": "आमच्याबद्दल" },
+  "nav": { "home": "होम", "deals": "ऑफर्स", "calculator": "कॅल्क", "blog": "ब्लॉग", "chat": "चॅट", "about": "आमच्याबद्दल" },
   "hero": { "tagline": "प्रत्येक घर, शेत आणि व्यवसायासाठी सौर ऊर्जा", "cta": "ही ऑफर मिळवा", "viewAll": "सर्व ऑफर्स पहा" },
   "products": { "title": "आमचे सोलर सोल्यूशन्स", "startingFrom": "₹{price} पासून", "enquire": "WhatsApp वर चौकशी करा" },
   "calculator": { "title": "तुम्ही किती बचत करू शकता?", "monthlyBill": "तुमचे मासिक वीज बिल", "propertyType": "मालमत्ता प्रकार", "district": "तुमचा जिल्हा", "residential": "घर", "farm": "शेत", "commercial": "व्यवसाय", "systemSize": "शिफारस केलेली सिस्टम", "monthlySavings": "मासिक बचत", "annualSavings": "वार्षिक बचत", "subsidy": "सरकारी अनुदान", "netCost": "तुमचा खर्च (अनुदानानंतर)", "payback": "परतफेड कालावधी", "years": "वर्षे", "getQuote": "WhatsApp वर अचूक कोट मिळवा", "fullCalc": "तपशीलवार गणना हवी आहे?", "perMonth": "/महिना", "perYear": "/वर्ष", "youSave": "तुम्ही अंदाजे बचत कराल", "thats": "म्हणजे" },

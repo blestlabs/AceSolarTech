@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Home", "deals": "Deals", "calculator": "Calc", "chat": "Chat", "about": "About" },
+  "nav": { "home": "Home", "deals": "Deals", "calculator": "Calc", "blog": "Blog", "chat": "Chat", "about": "About" },
   "hero": { "tagline": "Solar Power for Every Home, Farm & Business", "cta": "Get This Deal", "viewAll": "View All Deals" },
   "products": { "title": "Our Solar Solutions", "startingFrom": "Starting ₹{price}", "enquire": "Enquire on WhatsApp" },
   "calculator": { "title": "How Much Can You Save?", "monthlyBill": "Your Monthly Electricity Bill", "propertyType": "Property Type", "district": "Your District", "residential": "Home", "farm": "Farm", "commercial": "Business", "systemSize": "Recommended System", "monthlySavings": "Monthly Savings", "annualSavings": "Annual Savings", "subsidy": "Govt. Subsidy", "netCost": "Your Cost (After Subsidy)", "payback": "Payback Period", "years": "years", "getQuote": "Get Exact Quote on WhatsApp", "fullCalc": "Want detailed calculation?", "perMonth": "/month", "perYear": "/year", "youSave": "You save approximately", "thats": "That's" },
