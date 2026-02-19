@@ -22,7 +22,7 @@ Mobile-first solar company website targeting Dhule and Maharashtra, India. Whats
 | Tailwind CSS | 4 | Styling (light theme) |
 | Framer Motion | 12.x | Animations |
 | lucide-react | 0.574+ | Icons |
-| next-intl | 4.8+ | i18n (installed, using custom lightweight impl) |
+| (no external i18n) | — | Custom lightweight impl (cookie-based) |
 
 ## Design Decisions
 
@@ -38,39 +38,44 @@ Mobile-first solar company website targeting Dhule and Maharashtra, India. Whats
 ```
 src/
 ├── app/
-│   ├── layout.tsx              # Root layout (Noto Sans fonts, LocaleProvider)
+│   ├── layout.tsx              # Root layout (Noto Sans fonts, LocaleProvider, JSON-LD)
 │   ├── page.tsx                # Home (7 sections)
 │   ├── deals/page.tsx          # Deals board (filterable)
 │   ├── calculator/page.tsx     # Solar savings calculator
-│   └── about/page.tsx          # Company info + schemes
+│   ├── about/page.tsx          # Company info + schemes
+│   ├── error.tsx               # Error boundary with retry
+│   ├── not-found.tsx           # Branded 404 page
+│   ├── robots.ts               # /robots.txt generator
+│   └── sitemap.ts              # /sitemap.xml generator (4 pages)
 ├── components/
 │   ├── home/
-│   │   ├── HeroDeal.tsx        # Featured deal banner
+│   │   ├── HeroDeal.tsx        # Featured deal banner (reduced-motion aware)
 │   │   ├── ProductGrid.tsx     # 8 product categories (horizontal scroll)
-│   │   ├── QuickCalculator.tsx # Inline savings preview
+│   │   ├── QuickCalculator.tsx # Inline savings preview (uses solar-calc.ts)
 │   │   ├── SchemesSection.tsx  # PM Surya Ghar + KUSUM info
-│   │   ├── WhyUs.tsx           # 3 trust cards
-│   │   ├── ServiceArea.tsx     # Maharashtra district chips
-│   │   └── WhatsAppCTA.tsx     # Green CTA strip
+│   │   ├── WhyUs.tsx           # 3 trust cards (reduced-motion aware)
+│   │   ├── ServiceArea.tsx     # Maharashtra district chips (bilingual)
+│   │   └── WhatsAppCTA.tsx     # Green CTA strip (reduced-motion aware)
 │   ├── deals/
 │   │   ├── DealCard.tsx        # Deal with pricing + countdown
-│   │   ├── DealFilter.tsx      # Category filter chips
+│   │   ├── DealFilter.tsx      # Category filter chips (aria-pressed)
 │   │   └── DealsPageContent.tsx
 │   ├── calculator/
-│   │   ├── SavingsCalculator.tsx # Full calculator with 3 inputs
+│   │   ├── SavingsCalculator.tsx # Full calculator (fieldset/legend, label/id pairs)
 │   │   └── CalculatorPageContent.tsx
 │   ├── about/
-│   │   └── AboutPageContent.tsx
+│   │   └── AboutPageContent.tsx  # (reduced-motion aware)
 │   ├── layout/
-│   │   ├── BottomBar.tsx       # Mobile bottom tabs (Home, Deals, Calc, Chat)
+│   │   ├── BottomBar.tsx       # Mobile bottom tabs (aria-current, min-h-14)
 │   │   ├── MobileHeader.tsx    # Slim header with lang toggle
-│   │   ├── DesktopHeader.tsx   # Traditional nav for desktop
-│   │   └── Footer.tsx          # Desktop only
+│   │   ├── DesktopHeader.tsx   # Traditional nav (aria-current, aria-label)
+│   │   └── Footer.tsx          # Desktop only (aria-label)
 │   ├── ui/
-│   │   ├── LangToggle.tsx      # EN/मराठी switch
-│   │   └── CountdownTimer.tsx  # Deal expiry countdown
+│   │   ├── LangToggle.tsx      # EN/मराठी switch (dynamic aria-label)
+│   │   ├── CountdownTimer.tsx  # Deal expiry countdown (aria-live)
+│   │   └── FloatingWhatsApp.tsx # Fixed WhatsApp FAB button
 │   └── providers/
-│       └── LocaleProvider.tsx  # Locale context + cookie persistence
+│       └── LocaleProvider.tsx  # Locale context + cookie (SameSite=Lax) + html lang update
 ├── data/
 │   ├── products.json           # 8 bilingual product categories
 │   └── deals.json              # 4 bilingual deals (edit to update)
@@ -81,7 +86,7 @@ src/
 └── lib/
     ├── i18n.ts                 # useLocale(), useTranslations(), getLocalizedField()
     ├── whatsapp.ts             # WhatsApp link generators (pre-filled messages)
-    └── solar-calc.ts           # Maharashtra solar calculation engine
+    └── solar-calc.ts           # Maharashtra solar calculation engine (bilingual districts)
 ```
 
 ## Image Assets
@@ -165,6 +170,7 @@ pm2 logs acesolartech-frontend     # View logs
 
 | Date | Change |
 |------|--------|
+| 2026-02-18 | **AUDIT FIXES** - 3 parallel agents: (1) SEO — robots.ts, sitemap.ts, error.tsx, not-found.tsx, per-page OG metadata, JSON-LD LocalBusiness, AVIF image optimization, removed next-intl dependency. (2) i18n — Fixed translation keys, QuickCalculator uses solar-calc.ts instead of hardcoded math, bilingual district names, SavingsCalculator label/id pairs + fieldset. (3) A11Y — FloatingWhatsApp FAB, prefers-reduced-motion on all animations, aria-current/aria-pressed/aria-live across nav + filters + countdown, dynamic aria-labels. Repo made public. |
 | 2026-02-18 | **IMAGES & ASSETS** - DALL-E 3 generated logo, OG social banner, 8 product illustrations, favicon, apple-touch-icon, PWA icons (192/512px). Integrated into headers (logo), product grid (illustrations replace lucide icons), manifest, OpenGraph metadata. Added metadataBase for acesolartech.com. |
 | 2026-02-18 | **COMPLETE REDESIGN** - Mobile-first, WhatsApp-driven, bilingual EN/Marathi. Light theme for outdoor readability. Bottom tab nav, deals board with countdown timers, solar calculator with Maharashtra data + PM Surya Ghar subsidy, government schemes section, 8 product categories, service area (Dhule HQ + 10 Maharashtra districts). 35 source files from scratch. |
 | 2026-02-18 | **Initial site** - Dark theme premium design (replaced by redesign above) |
