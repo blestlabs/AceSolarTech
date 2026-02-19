@@ -1,6 +1,6 @@
 # AceSolarTech — Project Documentation
 
-**Last Updated:** February 18, 2026
+**Last Updated:** February 19, 2026
 **Status:** Active Production
 **URL:** https://acesolartech.com
 **Port:** 3020
@@ -22,6 +22,9 @@ Mobile-first solar company website targeting Dhule and Maharashtra, India. Whats
 | Tailwind CSS | 4 | Styling (light theme) |
 | Framer Motion | 12.x | Animations |
 | lucide-react | 0.574+ | Icons |
+| gray-matter | 4.x | Blog markdown frontmatter parsing |
+| remark + remark-html | 15.x | Markdown → HTML rendering |
+| @tailwindcss/typography | 4.x | Blog prose styling |
 | (no external i18n) | — | Custom lightweight impl (cookie-based) |
 
 ## Design Decisions
@@ -42,11 +45,13 @@ src/
 │   ├── page.tsx                # Home (7 sections)
 │   ├── deals/page.tsx          # Deals board (filterable)
 │   ├── calculator/page.tsx     # Solar savings calculator
+│   ├── blog/page.tsx           # Blog listing (search + tag filter)
+│   ├── blog/[slug]/page.tsx   # Dynamic blog post (SEO metadata, generateStaticParams)
 │   ├── about/page.tsx          # Company info + schemes
 │   ├── error.tsx               # Error boundary with retry
 │   ├── not-found.tsx           # Branded 404 page
 │   ├── robots.ts               # /robots.txt generator
-│   └── sitemap.ts              # /sitemap.xml generator (4 pages)
+│   └── sitemap.ts              # /sitemap.xml generator (dynamic, includes blog slugs)
 ├── components/
 │   ├── home/
 │   │   ├── HeroDeal.tsx        # Featured deal banner (reduced-motion aware)
@@ -63,6 +68,9 @@ src/
 │   ├── calculator/
 │   │   ├── SavingsCalculator.tsx # Full calculator (fieldset/legend, label/id pairs)
 │   │   └── CalculatorPageContent.tsx
+│   ├── blog/
+│   │   ├── BlogListContent.tsx   # Grid layout, search, tag filter, image cards
+│   │   └── BlogPostContent.tsx   # Article layout, prose styling, share, WhatsApp CTA
 │   ├── about/
 │   │   └── AboutPageContent.tsx  # (reduced-motion aware)
 │   ├── layout/
@@ -78,7 +86,13 @@ src/
 │       └── LocaleProvider.tsx  # Locale context + cookie (SameSite=Lax) + html lang update
 ├── data/
 │   ├── products.json           # 8 bilingual product categories
-│   └── deals.json              # 4 bilingual deals (edit to update)
+│   ├── deals.json              # 4 bilingual deals (edit to update)
+│   └── blog/                   # Markdown blog posts (frontmatter + content)
+│       ├── pm-surya-ghar-yojana-2026-complete-guide.md
+│       ├── kusum-yojana-solar-pumps-maharashtra-farmers.md
+│       ├── complete-guide-rooftop-solar-installation-india.md
+│       ├── net-metering-maharashtra-msedcl-guide.md
+│       └── solar-panel-maintenance-guide-25-year-lifespan.md
 ├── i18n/
 │   ├── config.ts               # Locale types
 │   ├── en.json                 # English UI strings
@@ -86,7 +100,8 @@ src/
 └── lib/
     ├── i18n.ts                 # useLocale(), useTranslations(), getLocalizedField()
     ├── whatsapp.ts             # WhatsApp link generators (pre-filled messages)
-    └── solar-calc.ts           # Maharashtra solar calculation engine (bilingual districts)
+    ├── solar-calc.ts           # Maharashtra solar calculation engine (bilingual districts)
+    └── blog.ts                 # Blog utilities (getAllBlogMeta, getBlogPost, markdown parsing)
 ```
 
 ## Image Assets
@@ -105,7 +120,14 @@ All images generated via DALL-E 3 (OpenAI API), stored in `public/`:
 **Product illustrations** (8 images in `public/images/`):
 `product-rooftop.png`, `product-farm.png`, `product-motor.png`, `product-street-light.png`, `product-home-light.png`, `product-commercial.png`, `product-parking.png`, `product-water-heater.png`
 
-To regenerate images: use DALL-E 3 via OpenAI API (key in `~/.secrets/credentials.json` → `api_keys.openai`).
+**Blog images** (22 images in `public/images/blog/`, generated via gpt-image-1):
+Hero images (5): `pm-surya-ghar-guide.png`, `kusum-yojana-solar-pump.png`, `rooftop-solar-installation-guide.png`, `net-metering-maharashtra.png`, `solar-panel-maintenance-cleaning.png`
+In-content (17): subsidy tables, application processes, before/after comparisons, diagrams, infographics
+
+**Stock images** (15 images in `public/images/stock/`, generated via gpt-image-1):
+`happy-family-solar-home.png`, `solar-team-installation.png`, `commercial-solar-factory.png`, `solar-street-lights-village.png`, `solar-water-heater-rooftop.png`, `farmer-solar-pump-irrigation.png`, `solar-carport-parking.png`, `solar-home-lights-interior.png`, `maharashtra-solar-landscape.png`, `emi-solar-financing.png`, `government-subsidy-filing.png`, `solar-panel-warranty-25year.png`, `dhule-city-solar.png`, `social-media-banner-solar.png`, `whatsapp-status-solar-offer.png`
+
+To regenerate images: use `python3 scripts/generate-blog-images.py` (uses gpt-image-1 via OpenAI API, key in `~/.secrets/credentials.json` → `api_keys.openai`).
 
 ## Key Files to Edit
 
@@ -118,6 +140,8 @@ To regenerate images: use DALL-E 3 via OpenAI API (key in `~/.secrets/credential
 | Modify solar calculations | `src/lib/solar-calc.ts` |
 | Add Maharashtra districts | `src/lib/solar-calc.ts` (DISTRICTS object) |
 | Replace product images | `public/images/product-*.png` (update `src/data/products.json` `image` field) |
+| Add/edit blog posts | `src/data/blog/*.md` (frontmatter + markdown, bilingual title/desc) |
+| Regenerate blog images | `python3 scripts/generate-blog-images.py` |
 
 ## Color Palette (Light Theme)
 
@@ -166,10 +190,34 @@ pm2 restart acesolartech-frontend  # Restart production
 pm2 logs acesolartech-frontend     # View logs
 ```
 
+## Blog System
+
+Markdown-powered blog at `/blog` with bilingual support. Posts are `.md` files in `src/data/blog/` with YAML frontmatter.
+
+**Frontmatter fields:** `title`, `titleMr`, `description`, `descriptionMr`, `date`, `author`, `tags[]`, `image`, `imageAlt`, `readTime`
+
+**Pages:** `/blog` (listing with search + tag filter), `/blog/[slug]` (article with prose styling + WhatsApp CTA)
+
+**Current posts (5, ~21,000 words total):**
+
+| Post | Slug | Words | Tags |
+|------|------|-------|------|
+| PM Surya Ghar Yojana 2026 Guide | `pm-surya-ghar-yojana-2026-complete-guide` | 3,515 | Government Subsidy, PM Surya Ghar, Rooftop Solar, Maharashtra |
+| KUSUM Yojana Solar Pumps | `kusum-yojana-solar-pumps-maharashtra-farmers` | 3,698 | KUSUM Yojana, Solar Pump, Farmers, Agriculture, Maharashtra |
+| Rooftop Solar Installation Guide | `complete-guide-rooftop-solar-installation-india` | 5,599 | Rooftop Solar, Solar Installation, Solar Panels, India, Guide |
+| Net Metering Maharashtra MSEDCL | `net-metering-maharashtra-msedcl-guide` | 3,939 | Net Metering, MSEDCL, Maharashtra, Electricity Bill, Solar Savings |
+| Solar Panel Maintenance 25-Year | `solar-panel-maintenance-guide-25-year-lifespan` | 4,194 | Solar Maintenance, Solar Panels, Tips, Cleaning, Maharashtra |
+
+**To add a new blog post:**
+1. Create `src/data/blog/your-slug.md` with frontmatter + markdown content
+2. Add hero image to `public/images/blog/`
+3. Rebuild (`npm run build`) — sitemap auto-updates
+
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-02-19 | **BLOG SYSTEM + 37 IMAGES** - Full blog infrastructure: markdown pipeline (gray-matter + remark), /blog listing with search + tag filtering, /blog/[slug] dynamic route with SEO metadata, Tailwind Typography prose styling, navigation updated (BottomBar + DesktopHeader + EN/MR translations), sitemap dynamically includes blog slugs. 5 researched blog posts (~21,000 words): PM Surya Ghar guide, KUSUM Yojana farmers guide, Rooftop Solar installation guide, Net Metering MSEDCL guide, Solar Panel Maintenance guide. 37 images generated via OpenAI gpt-image-1 (22 blog + 15 stock). Image generation script at `scripts/generate-blog-images.py`. |
 | 2026-02-18 | **AUDIT FIXES** - 3 parallel agents: (1) SEO — robots.ts, sitemap.ts, error.tsx, not-found.tsx, per-page OG metadata, JSON-LD LocalBusiness, AVIF image optimization, removed next-intl dependency. (2) i18n — Fixed translation keys, QuickCalculator uses solar-calc.ts instead of hardcoded math, bilingual district names, SavingsCalculator label/id pairs + fieldset. (3) A11Y — FloatingWhatsApp FAB, prefers-reduced-motion on all animations, aria-current/aria-pressed/aria-live across nav + filters + countdown, dynamic aria-labels. Repo made public. |
 | 2026-02-18 | **IMAGES & ASSETS** - DALL-E 3 generated logo, OG social banner, 8 product illustrations, favicon, apple-touch-icon, PWA icons (192/512px). Integrated into headers (logo), product grid (illustrations replace lucide icons), manifest, OpenGraph metadata. Added metadataBase for acesolartech.com. |
 | 2026-02-18 | **COMPLETE REDESIGN** - Mobile-first, WhatsApp-driven, bilingual EN/Marathi. Light theme for outdoor readability. Bottom tab nav, deals board with countdown timers, solar calculator with Maharashtra data + PM Surya Ghar subsidy, government schemes section, 8 product categories, service area (Dhule HQ + 10 Maharashtra districts). 35 source files from scratch. |
