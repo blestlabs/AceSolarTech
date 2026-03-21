@@ -41,10 +41,7 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
   const badge = getLocalizedField(deal.badge, locale);
   const features = deal.features[locale] || deal.features.en;
 
-  const discount = Math.round(
-    ((deal.originalPrice - deal.dealPrice) / deal.originalPrice) * 100
-  );
-  const savings = deal.originalPrice - deal.dealPrice;
+  const subsidy = deal.originalPrice - deal.dealPrice;
 
   const isLimited = deal.expiresAt !== null;
 
@@ -85,22 +82,32 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
       <p className="mt-1 text-sm text-text-secondary">{description}</p>
 
       {/* Price row */}
-      <div className="mt-4 flex flex-wrap items-baseline gap-2">
-        <span className="text-sm text-text-muted line-through">
-          &#8377;{deal.originalPrice.toLocaleString('en-IN')}
-        </span>
-        <span className="text-xl font-bold text-primary">
-          &#8377;{deal.dealPrice.toLocaleString('en-IN')}
-        </span>
-        <span className="rounded-full bg-success/10 px-2 py-0.5 text-xs font-semibold text-success">
-          {discount}% {t('deals.off')}
-        </span>
+      <div className="mt-4 space-y-1">
+        <div className="flex items-baseline gap-2">
+          <span className="text-sm text-text-muted">
+            {locale === 'mr' ? 'किंमत GST सह:' : 'Price incl. GST:'}
+          </span>
+          <span className="text-sm text-text-secondary">
+            &#8377;{deal.originalPrice.toLocaleString('en-IN')}
+          </span>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-sm text-text-muted">
+            {locale === 'mr' ? 'सबसिडी:' : 'Subsidy:'}
+          </span>
+          <span className="text-sm font-medium text-success">
+            -&#8377;{subsidy.toLocaleString('en-IN')}
+          </span>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-sm font-semibold">
+            {locale === 'mr' ? 'सबसिडी नंतरची किंमत:' : 'After Subsidy:'}
+          </span>
+          <span className="text-2xl font-bold text-primary">
+            &#8377;{deal.dealPrice.toLocaleString('en-IN')}
+          </span>
+        </div>
       </div>
-
-      {/* Save line */}
-      <p className="mt-1 text-sm font-medium text-success">
-        {t('deals.save')} &#8377;{savings.toLocaleString('en-IN')}
-      </p>
 
       {/* Features */}
       <ul className="mt-4 space-y-1.5">
@@ -131,7 +138,7 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
           {t('deals.whatsappNow')}
         </a>
         <a
-          href="tel:+91XXXXXXXXXX"
+          href="tel:+917264075144"
           className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-medium text-text active:bg-surface"
         >
           <Phone size={16} />

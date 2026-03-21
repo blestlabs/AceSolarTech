@@ -24,8 +24,18 @@ export default function HeroDeal() {
             transition={{ duration: 0.5 }}
             className="font-display text-2xl font-bold md:text-4xl"
           >
-            {t('hero.tagline')}
+            {locale === 'mr'
+              ? 'AceSolarTech — महाराष्ट्रासाठी सोलर सोल्यूशन्स'
+              : 'AceSolarTech — Solar Solutions for Maharashtra'}
           </motion.h1>
+          <motion.p
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-2 text-lg text-text-secondary"
+          >
+            {t('hero.tagline')}
+          </motion.p>
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,9 +60,7 @@ export default function HeroDeal() {
   const title = getLocalizedField(featuredDeal.title, locale);
   const badge = getLocalizedField(featuredDeal.badge, locale);
   const features = featuredDeal.features[locale] || featuredDeal.features.en;
-  const discount = Math.round(
-    ((featuredDeal.originalPrice - featuredDeal.dealPrice) / featuredDeal.originalPrice) * 100
-  );
+  const subsidy = featuredDeal.originalPrice - featuredDeal.dealPrice;
 
   return (
     <section className="bg-gradient-to-b from-primary-light to-white px-4 py-8 md:py-14">
@@ -64,27 +72,40 @@ export default function HeroDeal() {
       >
         {/* Text content */}
         <div className="flex-1">
+          {/* Page-level H1 (SEO) */}
+          <h1 className="sr-only">
+            {locale === 'mr'
+              ? 'AceSolarTech — महाराष्ट्रासाठी सोलर सोल्यूशन्स'
+              : 'AceSolarTech — Solar Solutions for Maharashtra'}
+          </h1>
+
           {/* Badge */}
           <span className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
             {badge}
           </span>
 
-          {/* Title */}
-          <h1 className="mt-3 font-display text-2xl font-bold leading-tight md:text-4xl">
+          {/* Deal Title */}
+          <h2 className="mt-3 font-display text-2xl font-bold leading-tight md:text-4xl">
             {title}
-          </h1>
+          </h2>
 
           {/* Price row */}
-          <div className="mt-4 flex items-baseline gap-3">
-            <span className="text-lg text-text-muted line-through">
-              ₹{featuredDeal.originalPrice.toLocaleString('en-IN')}
-            </span>
-            <span className="text-3xl font-bold text-primary md:text-4xl">
-              ₹{featuredDeal.dealPrice.toLocaleString('en-IN')}
-            </span>
-            <span className="rounded-full bg-success px-2.5 py-0.5 text-sm font-semibold text-white">
-              {discount}% {t('deals.off')}
-            </span>
+          <div className="mt-4 space-y-1">
+            <div className="flex items-baseline gap-2 text-sm text-text-muted">
+              {locale === 'mr' ? 'किंमत GST सह:' : 'Price incl. GST:'}{' '}
+              <span className="text-text-secondary">₹{featuredDeal.originalPrice.toLocaleString('en-IN')}</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-sm font-semibold">
+                {locale === 'mr' ? 'सबसिडी नंतरची किंमत:' : 'After Subsidy:'}
+              </span>
+              <span className="text-3xl font-bold text-primary md:text-4xl">
+                ₹{featuredDeal.dealPrice.toLocaleString('en-IN')}
+              </span>
+            </div>
+            <div className="text-sm font-medium text-success">
+              {locale === 'mr' ? 'सबसिडी:' : 'PM Surya Ghar Subsidy:'} ₹{subsidy.toLocaleString('en-IN')}
+            </div>
           </div>
 
           {/* Features */}
@@ -127,11 +148,11 @@ export default function HeroDeal() {
               className="object-cover"
               sizes="(max-width: 768px) 0vw, 50vw"
             />
-            <div className="absolute bottom-4 right-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/90 shadow-lg">
-              <span className="text-center font-display text-2xl font-bold text-white">
-                {discount}%
+            <div className="absolute bottom-4 right-4 flex h-20 w-20 items-center justify-center rounded-full bg-success/90 shadow-lg">
+              <span className="text-center font-display text-sm font-bold leading-tight text-white">
+                ₹{subsidy.toLocaleString('en-IN')}
                 <br />
-                <span className="text-xs">{t('deals.off')}</span>
+                <span className="text-[10px]">{locale === 'mr' ? 'सबसिडी' : 'Subsidy'}</span>
               </span>
             </div>
           </div>

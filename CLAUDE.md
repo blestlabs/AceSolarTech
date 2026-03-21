@@ -213,10 +213,22 @@ Markdown-powered blog at `/blog` with bilingual support. Posts are `.md` files i
 2. Add hero image to `public/images/blog/`
 3. Rebuild (`npm run build`) — sitemap auto-updates
 
+## Solar CRM Integration
+
+The homepage includes a **QuoteForm** component (`src/components/home/QuoteForm.tsx`) that POSTs directly to the Solar CRM API:
+- **API endpoint:** `https://api-crm.acesolartech.com/api/leads/public/quote-request`
+- **Districts dropdown:** fetched from `https://api-crm.acesolartech.com/api/leads/public/districts` (with hardcoded fallback)
+- **Fields:** Name (required), Phone (required), Monthly Bill, District, Message
+- **On submit:** Creates a lead in the Solar CRM under the AceSolarTech business, auto-assigned to admin
+- **Bilingual:** EN/Marathi via i18n keys under `quote.*`
+- **Rate limited:** Server-side 10 requests/hour per IP
+- **CRM project:** `/Users/blest/dev/solar-crm` (crm.acesolartech.com)
+
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-03-21 | **SOLAR CRM QUOTE FORM** - Inline QuoteForm component on homepage between Schemes and WhyUs. POSTs to Solar CRM API (api-crm.acesolartech.com). Fetches districts from CRM. Bilingual EN/Marathi with success state. No iframe, native styling. Added `quote.*` i18n keys. |
 | 2026-02-19 | **BLOG SYSTEM + 37 IMAGES** - Full blog infrastructure: markdown pipeline (gray-matter + remark), /blog listing with search + tag filtering, /blog/[slug] dynamic route with SEO metadata, Tailwind Typography prose styling, navigation updated (BottomBar + DesktopHeader + EN/MR translations), sitemap dynamically includes blog slugs. 5 researched blog posts (~21,000 words): PM Surya Ghar guide, KUSUM Yojana farmers guide, Rooftop Solar installation guide, Net Metering MSEDCL guide, Solar Panel Maintenance guide. 37 images generated via OpenAI gpt-image-1 (22 blog + 15 stock). Image generation script at `scripts/generate-blog-images.py`. |
 | 2026-02-18 | **AUDIT FIXES** - 3 parallel agents: (1) SEO — robots.ts, sitemap.ts, error.tsx, not-found.tsx, per-page OG metadata, JSON-LD LocalBusiness, AVIF image optimization, removed next-intl dependency. (2) i18n — Fixed translation keys, QuickCalculator uses solar-calc.ts instead of hardcoded math, bilingual district names, SavingsCalculator label/id pairs + fieldset. (3) A11Y — FloatingWhatsApp FAB, prefers-reduced-motion on all animations, aria-current/aria-pressed/aria-live across nav + filters + countdown, dynamic aria-labels. Repo made public. |
 | 2026-02-18 | **IMAGES & ASSETS** - DALL-E 3 generated logo, OG social banner, 8 product illustrations, favicon, apple-touch-icon, PWA icons (192/512px). Integrated into headers (logo), product grid (illustrations replace lucide icons), manifest, OpenGraph metadata. Added metadataBase for acesolartech.com. |

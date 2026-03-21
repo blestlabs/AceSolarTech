@@ -112,20 +112,22 @@ export default function SavingsCalculator() {
           value={`₹${result.annualSavings.toLocaleString('en-IN')}`}
           valueClass="text-success"
         />
-        <ResultRow
-          label={t('calculator.subsidy')}
-          value={
-            result.subsidy > 0
-              ? `₹${result.subsidy.toLocaleString('en-IN')}`
-              : '\u2014'
-          }
-          valueClass={result.subsidy > 0 ? 'text-success' : undefined}
-        />
+        {propertyType === 'residential' && (
+          <ResultRow
+            label={t('calculator.subsidy')}
+            value={
+              result.subsidy > 0
+                ? `₹${result.subsidy.toLocaleString('en-IN')}`
+                : '\u2014'
+            }
+            valueClass={result.subsidy > 0 ? 'text-success' : undefined}
+          />
+        )}
 
         <hr className="my-3 border-border" />
 
         <ResultRow
-          label={t('calculator.netCost')}
+          label={propertyType === 'residential' ? t('calculator.netCost') : t('calculator.estimatedCost')}
           value={`₹${result.netCost.toLocaleString('en-IN')}`}
           valueClass="text-primary font-bold"
         />

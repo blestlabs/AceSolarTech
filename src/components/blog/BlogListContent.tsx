@@ -45,7 +45,9 @@ export default function BlogListContent({ posts }: { posts: BlogMeta[] }) {
       {/* Search + Filter */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <div className="absolute left-3 inset-y-0 flex items-center pointer-events-none">
+            <Search className="w-4 h-4 text-gray-400" />
+          </div>
           <input
             type="text"
             placeholder={locale === 'mr' ? 'ब्लॉग शोधा...' : 'Search blogs...'}

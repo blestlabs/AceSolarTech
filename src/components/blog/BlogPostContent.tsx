@@ -111,7 +111,9 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
           prose-ul:list-disc prose-ol:list-decimal
           prose-li:text-gray-700
           prose-img:rounded-xl prose-img:shadow-md
-          prose-table:border-collapse prose-th:bg-gray-50 prose-th:p-3 prose-td:p-3 prose-td:border prose-th:border
+          prose-table:w-full prose-table:border-collapse prose-table:text-sm
+          prose-th:bg-gray-50 prose-th:p-3 prose-th:text-left prose-th:font-semibold prose-th:border prose-th:border-gray-200
+          prose-td:p-3 prose-td:border prose-td:border-gray-200
           prose-blockquote:border-l-primary prose-blockquote:bg-primary-light/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
@@ -127,7 +129,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             : 'Talk to our experts on WhatsApp — free consultation!'}
         </p>
         <a
-          href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%20read%20your%20blog%20and%20have%20questions%20about%20solar."
+          href="https://wa.me/917264075144?text=Hi!%20I%20read%20your%20blog%20and%20have%20questions%20about%20solar."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1da851] transition-colors"

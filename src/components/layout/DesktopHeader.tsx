@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, BarChart3 } from 'lucide-react';
 import { useLocale, useTranslations } from '@/lib/i18n';
 import { generalInquiry } from '@/lib/whatsapp';
 import LangToggle from '@/components/ui/LangToggle';
@@ -49,9 +49,18 @@ export default function DesktopHeader() {
           })}
         </nav>
 
-        {/* Right: LangToggle + WhatsApp CTA */}
+        {/* Right: LangToggle + GridShakti + WhatsApp CTA */}
         <div className="flex items-center gap-3">
           <LangToggle />
+          <a
+            href="https://grid.acesolartech.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-full border border-primary/30 px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+          >
+            <BarChart3 size={16} />
+            GridShakti
+          </a>
           <a
             href={generalInquiry(locale)}
             target="_blank"

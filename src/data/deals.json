@@ -1,20 +1,52 @@
 {
   "deals": [
     {
-      "id": "summer-3kw",
-      "title": { "en": "3kW Rooftop Solar System", "mr": "3kW रूफटॉप सोलर सिस्टम" },
-      "description": { "en": "Complete rooftop solar solution for your home", "mr": "तुमच्या घरासाठी संपूर्ण रूफटॉप सोलर सोल्यूशन" },
-      "originalPrice": 135000,
-      "dealPrice": 89999,
+      "id": "3kw-budget",
+      "title": { "en": "3kW Solar System — Budget", "mr": "3kW सोलर सिस्टम — बजेट" },
+      "description": { "en": "Affordable 3kW rooftop solar with Waaree Panels + Growatt Inverter. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "Waaree पॅनेल + Growatt इन्व्हर्टरसह परवडणारी 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "originalPrice": 149999,
+      "dealPrice": 71999,
       "category": "residential",
       "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
       "features": {
-        "en": ["Free installation", "5-year warranty", "Net metering included", "MNRE approved panels"],
-        "mr": ["मोफत इंस्टॉलेशन", "5-वर्ष वॉरंटी", "नेट मीटरिंग समाविष्ट", "MNRE मान्य पॅनेल"]
+        "en": ["Waaree Panels + Growatt Inverter", "₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
+        "mr": ["Waaree पॅनेल + Growatt इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
       },
       "expiresAt": "2026-04-30T23:59:59",
       "active": true,
       "featured": true
+    },
+    {
+      "id": "3kw-standard",
+      "title": { "en": "3kW Solar System — Standard", "mr": "3kW सोलर सिस्टम — स्टँडर्ड" },
+      "description": { "en": "Mid-range 3kW rooftop solar with Adani Panels + Growatt Inverter. Includes PM Surya Ghar subsidy, structure, installation, and GST.", "mr": "Adani पॅनेल + Growatt इन्व्हर्टरसह मिड-रेंज 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "originalPrice": 189999,
+      "dealPrice": 111999,
+      "category": "residential",
+      "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
+      "features": {
+        "en": ["Adani Panels + Growatt Inverter", "₹78,000 PM Surya Ghar subsidy applied", "Premium solar panels", "Solar structure included", "Net metering included"],
+        "mr": ["Adani पॅनेल + Growatt इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "प्रीमियम सोलर पॅनेल", "सोलर स्ट्रक्चर समाविष्ट", "नेट मीटरिंग समाविष्ट"]
+      },
+      "expiresAt": "2026-05-15T23:59:59",
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "3kw-premium",
+      "title": { "en": "3kW Solar System — Premium", "mr": "3kW सोलर सिस्टम — प्रीमियम" },
+      "description": { "en": "Top-tier 3kW rooftop solar with Tata Panels + Fronius Inverter. High-efficiency with 25-year warranty. Includes PM Surya Ghar subsidy, structure, installation, and GST.", "mr": "Tata पॅनेल + Fronius इन्व्हर्टरसह टॉप-टीअर 3kW रूफटॉप सोलर. उच्च-कार्यक्षमता आणि 25 वर्षांच्या वॉरंटीसह. PM सूर्य घर सबसिडी, स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "originalPrice": 229999,
+      "dealPrice": 151999,
+      "category": "residential",
+      "badge": { "en": "NEW", "mr": "नवीन" },
+      "features": {
+        "en": ["Tata Panels + Fronius Inverter", "₹78,000 PM Surya Ghar subsidy applied", "High-efficiency panels", "25-year performance warranty", "Net metering included"],
+        "mr": ["Tata पॅनेल + Fronius इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "उच्च-कार्यक्षमता पॅनेल", "25-वर्ष कामगिरी वॉरंटी", "नेट मीटरिंग समाविष्ट"]
+      },
+      "expiresAt": null,
+      "active": true,
+      "featured": false
     },
     {
       "id": "farmer-pump-5hp",
@@ -44,7 +76,7 @@
         "en": ["5 all-in-one units", "Dusk-to-dawn automatic", "2-year warranty", "Free delivery"],
         "mr": ["5 ऑल-इन-वन युनिट", "संध्याकाळ ते पहाट ऑटोमॅटिक", "2-वर्ष वॉरंटी", "मोफत डिलिव्हरी"]
       },
-      "expiresAt": "2026-03-31T23:59:59",
+      "expiresAt": "2026-04-30T23:59:59",
       "active": true,
       "featured": false
     },

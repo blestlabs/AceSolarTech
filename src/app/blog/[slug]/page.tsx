@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { getAllBlogSlugs, getBlogPost } from '@/lib/blog';
 import BlogPostContent from '@/components/blog/BlogPostContent';
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | AceSolarTech Blog`,
     description: post.description,
+    alternates: {
+      canonical: `https://acesolartech.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -42,5 +46,44 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getBlogPost(slug);
   if (!post) notFound();
 
-  return <BlogPostContent post={post} />;
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    image: `https://acesolartech.com${post.image}`,
+    datePublished: post.date,
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+      url: 'https://acesolartech.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'AceSolarTech',
+      url: 'https://acesolartech.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://acesolartech.com/images/logo-icon.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://acesolartech.com/blog/${slug}`,
+    },
+    keywords: post.tags.join(', '),
+  };
+
+  return (
+    <>
+      <Script
+        id={`article-jsonld-${slug}`}
+        type="application/ld+json"
+        strategy="beforeInteractive"
+      >
+        {JSON.stringify(articleJsonLd)}
+      </Script>
+      <BlogPostContent post={post} />
+    </>
+  );
 }

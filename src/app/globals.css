@@ -32,3 +32,11 @@ body { -webkit-tap-highlight-color: transparent; }
 /* Hide horizontal scrollbar for product grids */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Blog tables — responsive overflow + striped rows */
+.prose table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.prose tbody tr:nth-child(even) { background: #f9fafb; }
+.prose thead tr { border-bottom: 2px solid #e5e7eb; }
+
+/* GFM task list checkboxes */
+.prose input[type="checkbox"] { accent-color: var(--color-primary); margin-right: 0.5em; }

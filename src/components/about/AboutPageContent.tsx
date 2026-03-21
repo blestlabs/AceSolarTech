@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import {
   Sun, Sprout, Zap, Lightbulb, Lamp, Building2, Car, Droplets,
-  MessageCircle, MapPin, Wrench,
+  MessageCircle, MapPin, Wrench, Building, Award, IndianRupee,
 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations, getLocalizedField } from '@/lib/i18n';
@@ -25,9 +24,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const steps = [
-  { num: 1, icon: MessageCircle, titleKey: 'about.step1', descKey: 'about.step1Desc', image: '/images/about-step-whatsapp.png', imageAlt: 'Customer sending WhatsApp message to AceSolarTech' },
-  { num: 2, icon: MapPin, titleKey: 'about.step2', descKey: 'about.step2Desc', image: '/images/about-step-site-visit.png', imageAlt: 'Solar technicians doing rooftop site assessment' },
-  { num: 3, icon: Wrench, titleKey: 'about.step3', descKey: 'about.step3Desc', image: '/images/about-step-installation.png', imageAlt: 'Professional solar panel installation in progress' },
+  { num: 1, icon: MessageCircle, titleKey: 'about.step1', descKey: 'about.step1Desc' },
+  { num: 2, icon: MapPin, titleKey: 'about.step2', descKey: 'about.step2Desc' },
+  { num: 3, icon: Wrench, titleKey: 'about.step3', descKey: 'about.step3Desc' },
 ];
 
 export default function AboutPageContent() {
@@ -37,7 +36,7 @@ export default function AboutPageContent() {
 
   return (
     <>
-      {/* Mission Section */}
+      {/* Our Story Section */}
       <section className="px-4 py-8 md:py-12">
         <div className="mx-auto max-w-6xl">
           <motion.div
@@ -45,36 +44,58 @@ export default function AboutPageContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-2xl"
+            className="rounded-2xl bg-primary-light p-6 md:p-8"
           >
-            <div className="relative aspect-[3/1]">
-              <Image src="/images/about-mission.png" alt="Maharashtra transitioning to solar energy" fill className="object-cover" sizes="100vw" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+            <h2 className="font-display text-xl font-bold md:text-2xl">
+              {locale === 'mr' ? 'आमची कथा' : 'Our Story'}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary md:text-base">
+              {locale === 'mr'
+                ? 'ACE SOLAR TECH LLP ही धुळे, महाराष्ट्र स्थित सौर ऊर्जा कंपनी आहे. आम्ही घरमालक, शेतकरी आणि उत्तर महाराष्ट्रातील व्यवसायांना सेवा देतो. PM सूर्य घर आणि कुसुम योजनांचे अधिकृत डीलर म्हणून, आम्ही प्रदेशातील सर्वात कमी किमतीत सोलर परवडणारे बनवण्यासाठी वचनबद्ध आहोत.'
+                : 'ACE SOLAR TECH LLP is a solar energy company based in Dhule, Maharashtra. We serve homeowners, farmers, and businesses across North Maharashtra. As authorized dealers for PM Surya Ghar and KUSUM Yojana, we are committed to making solar affordable with the lowest prices in the region.'}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-text">
+                <Award size={14} className="text-primary" />
+                {locale === 'mr' ? 'PM सूर्य घर अधिकृत डीलर' : 'PM Surya Ghar Authorized Dealer'}
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-text">
+                <IndianRupee size={14} className="text-primary" />
+                {locale === 'mr' ? 'कुसुम योजना अधिकृत डीलर' : 'KUSUM Yojana Authorized Dealer'}
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-text">
+                <Building size={14} className="text-primary" />
+                {locale === 'mr' ? 'धुळे, महाराष्ट्र' : 'Dhule, Maharashtra'}
+              </span>
             </div>
-            <div className="absolute inset-0 flex items-center px-6 md:px-12">
-              <p className="max-w-lg font-display text-lg font-medium text-white md:text-2xl drop-shadow-lg">
-                {t('about.mission')}
-              </p>
-            </div>
+            <p className="mt-3 text-xs text-text-muted">
+              {locale === 'mr'
+                ? 'पत्ता: दुकान क्र. 108, श्रीराम शॉपिंग कॉम्प्लेक्स, साक्री रोड, धुळे'
+                : 'Address: Shop No. 108, Shriram Shopping Complex, Sakri Road, Dhule'}
+            </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Team photo */}
+      {/* Mission Section */}
+      <section className="px-4 mt-4 md:mt-6">
+        <div className="mx-auto max-w-6xl">
           <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 overflow-hidden rounded-2xl"
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl bg-surface p-6 md:p-8"
           >
-            <div className="relative aspect-[2.5/1]">
-              <Image src="/images/about-team.png" alt="AceSolarTech team" fill className="object-cover" sizes="100vw" />
-            </div>
+            <p className="font-display text-lg font-medium text-text md:text-xl">
+              {t('about.mission')}
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="px-4 py-8 md:py-12">
+      <section className="px-4 mt-12 md:mt-16">
         <div className="mx-auto max-w-6xl">
           <motion.h2
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
@@ -115,7 +136,7 @@ export default function AboutPageContent() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-surface px-4 py-8 md:py-12">
+      <section className="bg-surface px-4 mt-12 py-8 md:mt-16 md:py-12">
         <div className="mx-auto max-w-6xl">
           <motion.h2
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
@@ -127,7 +148,7 @@ export default function AboutPageContent() {
             {t('about.howItWorks')}
           </motion.h2>
 
-          <div className="relative mt-8 flex flex-col items-center gap-8 md:flex-row md:justify-between md:gap-0">
+          <div className="relative mt-8 flex flex-col items-center gap-6 md:flex-row md:justify-between md:gap-0">
             {/* Connection line (desktop only) */}
             <div className="absolute left-[16.67%] right-[16.67%] top-6 hidden h-0.5 bg-border md:block" />
 
@@ -142,9 +163,6 @@ export default function AboutPageContent() {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="relative z-10 flex flex-col items-center text-center md:flex-1"
                 >
-                  <div className="mx-auto mb-3 w-48 overflow-hidden rounded-xl">
-                    <Image src={step.image} alt={step.imageAlt} width={192} height={192} className="object-cover" />
-                  </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
                     {step.num}
                   </div>

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Solar Energy Blog | AceSolarTech',
   description:
     'Expert guides on solar panels, government subsidies, net metering, and solar farming in Maharashtra. Learn how to save on electricity with AceSolarTech.',
+  alternates: {
+    canonical: 'https://acesolartech.com/blog',
+  },
   openGraph: {
     title: 'Solar Energy Blog | AceSolarTech',
     description:

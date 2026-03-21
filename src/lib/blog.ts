@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 
 export interface BlogPost {
@@ -74,7 +75,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content: md } = matter(raw);
 
-  const result = await remark().use(html, { sanitize: false }).process(md);
+  const result = await remark().use(remarkGfm).use(html, { sanitize: false }).process(md);
 
   return {
     slug,
