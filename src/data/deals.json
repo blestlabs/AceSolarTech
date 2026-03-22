@@ -1,96 +1,48 @@
 {
   "deals": [
     {
-      "id": "3kw-budget",
-      "title": { "en": "3kW Solar System — Budget", "mr": "3kW सोलर सिस्टम — बजेट" },
-      "description": { "en": "Affordable 3kW rooftop solar with Waaree Panels + Growatt Inverter. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "Waaree पॅनेल + Growatt इन्व्हर्टरसह परवडणारी 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "id": "3kw-system",
+      "title": { "en": "3kW Solar System", "mr": "3kW सोलर सिस्टम" },
+      "description": { "en": "Complete 3kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
       "originalPrice": 149999,
       "dealPrice": 71999,
       "category": "residential",
       "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
       "features": {
-        "en": ["Waaree Panels + Growatt Inverter", "₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
-        "mr": ["Waaree पॅनेल + Growatt इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
+        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
+        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
       },
-      "expiresAt": "2026-04-30T23:59:59",
+      "expiresAt": null,
       "active": true,
       "featured": true
     },
     {
-      "id": "3kw-standard",
-      "title": { "en": "3kW Solar System — Standard", "mr": "3kW सोलर सिस्टम — स्टँडर्ड" },
-      "description": { "en": "Mid-range 3kW rooftop solar with Adani Panels + Growatt Inverter. Includes PM Surya Ghar subsidy, structure, installation, and GST.", "mr": "Adani पॅनेल + Growatt इन्व्हर्टरसह मिड-रेंज 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "id": "4kw-system",
+      "title": { "en": "4kW Solar System", "mr": "4kW सोलर सिस्टम" },
+      "description": { "en": "Complete 4kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 4kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
       "originalPrice": 189999,
       "dealPrice": 111999,
       "category": "residential",
-      "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
+      "badge": { "en": "POPULAR", "mr": "लोकप्रिय" },
       "features": {
-        "en": ["Adani Panels + Growatt Inverter", "₹78,000 PM Surya Ghar subsidy applied", "Premium solar panels", "Solar structure included", "Net metering included"],
-        "mr": ["Adani पॅनेल + Growatt इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "प्रीमियम सोलर पॅनेल", "सोलर स्ट्रक्चर समाविष्ट", "नेट मीटरिंग समाविष्ट"]
+        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
+        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
       },
-      "expiresAt": "2026-05-15T23:59:59",
+      "expiresAt": null,
       "active": true,
       "featured": false
     },
     {
-      "id": "3kw-premium",
-      "title": { "en": "3kW Solar System — Premium", "mr": "3kW सोलर सिस्टम — प्रीमियम" },
-      "description": { "en": "Top-tier 3kW rooftop solar with Tata Panels + Fronius Inverter. High-efficiency with 25-year warranty. Includes PM Surya Ghar subsidy, structure, installation, and GST.", "mr": "Tata पॅनेल + Fronius इन्व्हर्टरसह टॉप-टीअर 3kW रूफटॉप सोलर. उच्च-कार्यक्षमता आणि 25 वर्षांच्या वॉरंटीसह. PM सूर्य घर सबसिडी, स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "id": "5kw-system",
+      "title": { "en": "5kW Solar System", "mr": "5kW सोलर सिस्टम" },
+      "description": { "en": "Complete 5kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 5kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
       "originalPrice": 229999,
       "dealPrice": 151999,
       "category": "residential",
-      "badge": { "en": "NEW", "mr": "नवीन" },
+      "badge": { "en": "BEST VALUE", "mr": "सर्वोत्तम किंमत" },
       "features": {
-        "en": ["Tata Panels + Fronius Inverter", "₹78,000 PM Surya Ghar subsidy applied", "High-efficiency panels", "25-year performance warranty", "Net metering included"],
-        "mr": ["Tata पॅनेल + Fronius इन्व्हर्टर", "₹78,000 PM सूर्य घर सबसिडी लागू", "उच्च-कार्यक्षमता पॅनेल", "25-वर्ष कामगिरी वॉरंटी", "नेट मीटरिंग समाविष्ट"]
-      },
-      "expiresAt": null,
-      "active": true,
-      "featured": false
-    },
-    {
-      "id": "farmer-pump-5hp",
-      "title": { "en": "5HP Solar Water Pump", "mr": "5HP सोलर वॉटर पंप" },
-      "description": { "en": "Complete solar pump for agriculture", "mr": "शेतीसाठी संपूर्ण सोलर पंप" },
-      "originalPrice": 350000,
-      "dealPrice": 245000,
-      "category": "farm",
-      "badge": { "en": "FARMER SPECIAL", "mr": "शेतकरी स्पेशल" },
-      "features": {
-        "en": ["KUSUM Yojana eligible", "Free borewell survey", "3-year motor warranty", "Government subsidy assistance"],
-        "mr": ["कुसुम योजना पात्र", "मोफत बोअरवेल सर्वे", "3-वर्ष मोटर वॉरंटी", "सरकारी अनुदान सहाय्य"]
-      },
-      "expiresAt": null,
-      "active": true,
-      "featured": false
-    },
-    {
-      "id": "street-light-bundle",
-      "title": { "en": "Solar Street Light Pack (5 units)", "mr": "सोलर स्ट्रीट लाइट पॅक (5 युनिट)" },
-      "description": { "en": "Light up your street or compound", "mr": "तुमचा रस्ता किंवा परिसर उजळा" },
-      "originalPrice": 50000,
-      "dealPrice": 37500,
-      "category": "commercial",
-      "badge": { "en": "BUNDLE DEAL", "mr": "बंडल ऑफर" },
-      "features": {
-        "en": ["5 all-in-one units", "Dusk-to-dawn automatic", "2-year warranty", "Free delivery"],
-        "mr": ["5 ऑल-इन-वन युनिट", "संध्याकाळ ते पहाट ऑटोमॅटिक", "2-वर्ष वॉरंटी", "मोफत डिलिव्हरी"]
-      },
-      "expiresAt": "2026-04-30T23:59:59",
-      "active": true,
-      "featured": false
-    },
-    {
-      "id": "commercial-10kw",
-      "title": { "en": "10kW Commercial Solar System", "mr": "10kW व्यावसायिक सोलर सिस्टम" },
-      "description": { "en": "Power your shop, office or factory", "mr": "तुमचे दुकान, कार्यालय किंवा कारखाना चालवा" },
-      "originalPrice": 550000,
-      "dealPrice": 449000,
-      "category": "commercial",
-      "badge": { "en": "NEW", "mr": "नवीन" },
-      "features": {
-        "en": ["Professional site survey", "Custom design", "Net metering setup", "10-year panel warranty"],
-        "mr": ["व्यावसायिक साइट सर्वे", "कस्टम डिझाइन", "नेट मीटरिंग सेटअप", "10-वर्ष पॅनेल वॉरंटी"]
+        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
+        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
       },
       "expiresAt": null,
       "active": true,

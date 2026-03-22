@@ -15,6 +15,7 @@
   "products": {
     "title": "Our Solar Solutions",
     "startingFrom": "Starting ₹{price}",
+    "contactForPricing": "Contact for pricing",
     "enquire": "Enquire on WhatsApp"
   },
   "calculator": {

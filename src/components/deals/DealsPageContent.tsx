@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { useLocale, useTranslations } from '@/lib/i18n';
-import DealFilter from '@/components/deals/DealFilter';
 import DealCard from '@/components/deals/DealCard';
 import dealsData from '@/data/deals.json';
 
@@ -18,37 +16,37 @@ const relatedPosts = [
 export default function DealsPageContent() {
   const locale = useLocale();
   const t = useTranslations();
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filteredDeals = dealsData.deals.filter((deal) => {
-    if (!deal.active) return false;
-    if (activeFilter === 'all') return true;
-    return deal.category === activeFilter;
-  });
+  const activeDeals = dealsData.deals.filter((deal) => deal.active);
 
   return (
     <section className="mx-auto max-w-2xl px-4 py-8">
       {/* Heading */}
       <h1 className="font-display text-2xl font-bold">{t('deals.title')}</h1>
 
-      {/* Filter chips */}
-      <div className="mt-5">
-        <DealFilter activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-      </div>
-
       {/* Deal cards */}
       <div className="mt-6 space-y-5">
         <AnimatePresence mode="popLayout">
-          {filteredDeals.length > 0 ? (
-            filteredDeals.map((deal, idx) => (
-              <DealCard key={deal.id} deal={deal} index={idx} />
-            ))
-          ) : (
-            <p className="py-12 text-center text-text-secondary">
-              {t('deals.noneFound')}
-            </p>
-          )}
+          {activeDeals.map((deal, idx) => (
+            <DealCard key={deal.id} deal={deal} index={idx} />
+          ))}
         </AnimatePresence>
+      </div>
+
+      {/* Contact for other sizes */}
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary-light p-5 text-center">
+        <p className="text-sm font-medium text-text">
+          {locale === 'mr'
+            ? 'इतर सिस्टम साइझ (1kW, 2kW, 6kW, 10kW+) आणि व्यावसायिक सोलरसाठी संपर्क करा'
+            : 'For other system sizes (1kW, 2kW, 6kW, 10kW+) and commercial solar, contact us'}
+        </p>
+        <div className="mt-3 flex justify-center gap-3">
+          <a
+            href="tel:+917264075144"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-text active:bg-surface"
+          >
+            📞 7264075144
+          </a>
+        </div>
       </div>
 
       {/* Learn More — related blog posts */}

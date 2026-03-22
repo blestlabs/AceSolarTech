@@ -54,7 +54,7 @@ export default function ProductGrid() {
                   {name}
                 </span>
                 <span className="text-center text-xs text-text-secondary">
-                  {t('products.startingFrom', { price: product.startingPrice.toLocaleString('en-IN') })}/{product.unit}
+                  {t('products.contactForPricing')}
                 </span>
               </a>
             );
