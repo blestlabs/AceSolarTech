@@ -41,10 +41,10 @@ export default function DealsPageContent() {
         </p>
         <div className="mt-3 flex justify-center gap-3">
           <a
-            href="tel:+917264075144"
+            href="tel:+918411075144"
             className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-text active:bg-surface"
           >
-            📞 7264075144
+            📞 8411075144
           </a>
         </div>
       </div>

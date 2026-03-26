@@ -138,7 +138,7 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
           {t('deals.whatsappNow')}
         </a>
         <a
-          href="tel:+917264075144"
+          href="tel:+918411075144"
           className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-medium text-text active:bg-surface"
         >
           <Phone size={16} />

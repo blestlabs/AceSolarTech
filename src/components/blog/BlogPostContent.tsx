@@ -129,7 +129,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             : 'Talk to our experts on WhatsApp — free consultation!'}
         </p>
         <a
-          href="https://wa.me/917264075144?text=Hi!%20I%20read%20your%20blog%20and%20have%20questions%20about%20solar."
+          href="https://wa.me/918411075144?text=Hi!%20I%20read%20your%20blog%20and%20have%20questions%20about%20solar."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1da851] transition-colors"
