@@ -25,6 +25,8 @@ interface Deal {
   expiresAt: string | null;
   active: boolean;
   featured: boolean;
+  image?: string;
+  imageAlt?: { en: string; mr: string };
 }
 
 interface DealCardProps {
@@ -54,10 +56,16 @@ export default function DealCard({ deal, index = 0 }: DealCardProps) {
       transition={{ duration: 0.35, delay: index * 0.08 }}
       className="overflow-hidden rounded-xl border border-border bg-white shadow-sm"
     >
-      {/* Category image */}
-      {categoryImages[deal.category] && (
-        <div className="relative aspect-[3/1]">
-          <Image src={categoryImages[deal.category].src} alt={categoryImages[deal.category].alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+      {/* Deal image (per-deal override falls back to category default) */}
+      {(deal.image || categoryImages[deal.category]) && (
+        <div className="relative aspect-[16/9]">
+          <Image
+            src={deal.image ?? categoryImages[deal.category].src}
+            alt={deal.imageAlt ? getLocalizedField(deal.imageAlt, locale) : categoryImages[deal.category].alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       )}
 

@@ -2,51 +2,123 @@
   "deals": [
     {
       "id": "3kw-system",
-      "title": { "en": "3kW Solar System", "mr": "3kW सोलर सिस्टम" },
-      "description": { "en": "Complete 3kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "title": {
+        "en": "3kW Solar System",
+        "mr": "3kW सोलर सिस्टम"
+      },
+      "description": {
+        "en": "Complete 3kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.",
+        "mr": "संपूर्ण 3kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट."
+      },
       "originalPrice": 149999,
       "dealPrice": 71999,
       "category": "residential",
-      "badge": { "en": "BEST SELLER", "mr": "सर्वाधिक विक्री" },
+      "badge": {
+        "en": "BEST SELLER",
+        "mr": "सर्वाधिक विक्री"
+      },
       "features": {
-        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
-        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
+        "en": [
+          "₹78,000 PM Surya Ghar subsidy applied",
+          "Solar structure included",
+          "Professional installation",
+          "Net metering included"
+        ],
+        "mr": [
+          "₹78,000 PM सूर्य घर सबसिडी लागू",
+          "सोलर स्ट्रक्चर समाविष्ट",
+          "व्यावसायिक इंस्टॉलेशन",
+          "नेट मीटरिंग समाविष्ट"
+        ]
       },
       "expiresAt": null,
       "active": true,
-      "featured": true
+      "featured": true,
+      "image": "/images/deal-residential-3kw.png",
+      "imageAlt": {
+        "en": "Solar installer mounting a 3kW rooftop array on flat RCC roof in Maharashtra",
+        "mr": "महाराष्ट्रातील सपाट छतावर 3kW सौर पॅनेल स्थापित करणारा तंत्रज्ञ"
+      }
     },
     {
       "id": "4kw-system",
-      "title": { "en": "4kW Solar System", "mr": "4kW सोलर सिस्टम" },
-      "description": { "en": "Complete 4kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 4kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "title": {
+        "en": "4kW Solar System",
+        "mr": "4kW सोलर सिस्टम"
+      },
+      "description": {
+        "en": "Complete 4kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.",
+        "mr": "संपूर्ण 4kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट."
+      },
       "originalPrice": 189999,
       "dealPrice": 111999,
       "category": "residential",
-      "badge": { "en": "POPULAR", "mr": "लोकप्रिय" },
+      "badge": {
+        "en": "POPULAR",
+        "mr": "लोकप्रिय"
+      },
       "features": {
-        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
-        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
+        "en": [
+          "₹78,000 PM Surya Ghar subsidy applied",
+          "Solar structure included",
+          "Professional installation",
+          "Net metering included"
+        ],
+        "mr": [
+          "₹78,000 PM सूर्य घर सबसिडी लागू",
+          "सोलर स्ट्रक्चर समाविष्ट",
+          "व्यावसायिक इंस्टॉलेशन",
+          "नेट मीटरिंग समाविष्ट"
+        ]
       },
       "expiresAt": null,
       "active": true,
-      "featured": false
+      "featured": false,
+      "image": "/images/deal-residential-4kw.png",
+      "imageAlt": {
+        "en": "Solar installer working on a 4kW rooftop array on flat RCC roof in Maharashtra",
+        "mr": "महाराष्ट्रातील सपाट छतावर 4kW सौर पॅनेल स्थापित करणारा तंत्रज्ञ"
+      }
     },
     {
       "id": "5kw-system",
-      "title": { "en": "5kW Solar System", "mr": "5kW सोलर सिस्टम" },
-      "description": { "en": "Complete 5kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.", "mr": "संपूर्ण 5kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट." },
+      "title": {
+        "en": "5kW Solar System",
+        "mr": "5kW सोलर सिस्टम"
+      },
+      "description": {
+        "en": "Complete 5kW rooftop solar system. Price includes PM Surya Ghar subsidy, solar structure, installation, and GST.",
+        "mr": "संपूर्ण 5kW रूफटॉप सोलर सिस्टम. PM सूर्य घर सबसिडी, सोलर स्ट्रक्चर, इंस्टॉलेशन आणि GST समाविष्ट."
+      },
       "originalPrice": 229999,
       "dealPrice": 151999,
       "category": "residential",
-      "badge": { "en": "BEST VALUE", "mr": "सर्वोत्तम किंमत" },
+      "badge": {
+        "en": "BEST VALUE",
+        "mr": "सर्वोत्तम किंमत"
+      },
       "features": {
-        "en": ["₹78,000 PM Surya Ghar subsidy applied", "Solar structure included", "Professional installation", "Net metering included"],
-        "mr": ["₹78,000 PM सूर्य घर सबसिडी लागू", "सोलर स्ट्रक्चर समाविष्ट", "व्यावसायिक इंस्टॉलेशन", "नेट मीटरिंग समाविष्ट"]
+        "en": [
+          "₹78,000 PM Surya Ghar subsidy applied",
+          "Solar structure included",
+          "Professional installation",
+          "Net metering included"
+        ],
+        "mr": [
+          "₹78,000 PM सूर्य घर सबसिडी लागू",
+          "सोलर स्ट्रक्चर समाविष्ट",
+          "व्यावसायिक इंस्टॉलेशन",
+          "नेट मीटरिंग समाविष्ट"
+        ]
       },
       "expiresAt": null,
       "active": true,
-      "featured": false
+      "featured": false,
+      "image": "/images/deal-residential-5kw.png",
+      "imageAlt": {
+        "en": "Solar installer working on a 5kW rooftop array on flat RCC roof in Maharashtra",
+        "mr": "महाराष्ट्रातील सपाट छतावर 5kW सौर पॅनेल स्थापित करणारा तंत्रज्ञ"
+      }
     }
   ]
 }
