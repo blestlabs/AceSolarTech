@@ -70,10 +70,10 @@ export default function HeroDeal() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl md:flex md:items-center md:gap-12"
       >
-        {/* Mobile hero image (shown above text on small screens, hidden on desktop where the right-column image takes over) */}
-        <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden rounded-2xl md:hidden">
+        {/* Mobile hero image — bias-left square crop optimized for portrait phone screens */}
+        <div className="relative mb-6 aspect-square w-full overflow-hidden rounded-2xl md:hidden">
           <Image
-            src="/images/hero-solar-home.png"
+            src="/images/hero-solar-home-mobile.png"
             alt={locale === 'mr' ? 'महाराष्ट्रात रूफटॉप सोलर असलेले समाधानी कुटुंब' : 'Maharashtrian family on rooftop with their new solar installation'}
             fill
             className="object-cover"
